@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\OwnerController;
+use App\Http\Controllers\Backend\RoomController;
+use App\Http\Controllers\Backend\RoomTypeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -62,6 +64,20 @@ Route::middleware(['auth','roles:admin'])->group(function(){
      Route::controller(OwnerController::class)->group(function(){
         Route::get('/book/area', 'bookArea')->name('book.area');
         Route::post('/book/area/update', 'bookAreaUpdate')->name('book.area.update');
+    });
+
+     // manage room type
+     Route::controller(RoomTypeController::class)->group(function(){
+        Route::get('/room/type/list', 'roomTypeList')->name('room.type.list');
+        Route::get('/room/type/create', 'addRoomType')->name('add.room.type');
+        Route::post('/room/type/store', 'roomTypeStore')->name('room.type.store');
+    });
+
+      // manage room
+      Route::controller(RoomController::class)->group(function(){
+        Route::get('/room/{id}/edit', 'editRoom')->name('edit.room'); 
+        Route::post('/room/{id}/update', 'updateRoom')->name('update.room'); 
+        Route::get('/room/multi-image/{id}/delete', 'multiImageDelete')->name('multi.image.delete'); 
     });
 });
 
