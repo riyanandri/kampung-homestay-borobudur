@@ -56,7 +56,12 @@ Route::middleware(['auth','roles:admin'])->group(function(){
         Route::get('/owner/{id}/edit', 'editOwner')->name('edit.owner');
         Route::post('/owner/update', 'updateOwner')->name('update.owner');
         Route::get('/owner/{id}/delete', 'deleteOwner')->name('delete.owner');
+    });
 
+     // manage book area
+     Route::controller(OwnerController::class)->group(function(){
+        Route::get('/book/area', 'bookArea')->name('book.area');
+        Route::post('/book/area/update', 'bookAreaUpdate')->name('book.area.update');
     });
 });
 
