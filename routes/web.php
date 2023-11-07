@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Backend\OwnerController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -38,12 +39,25 @@ require __DIR__.'/auth.php';
 
 // admin group middleware
 Route::middleware(['auth','roles:admin'])->group(function(){
+
+    // admin profiles
     Route::get('/admin/dashboard', [AdminController::class, 'adminDashboard'])->name('admin.dashboard');
     Route::get('/admin/logout', [AdminController::class, 'adminLogout'])->name('admin.logout');
     Route::get('/admin/profile', [AdminController::class, 'adminProfile'])->name('admin.profile');
     Route::post('/admin/profile/store', [AdminController::class, 'adminProfileStore'])->name('admin.profile.store');
     Route::get('/admin/change-password', [AdminController::class, 'adminChangePassword'])->name('admin.change.password');
-    Route::post('/admin/password/update', [AdminController::class, 'adminPasswordUpdate'])->name('admin.password.update');    
+    Route::post('/admin/password/update', [AdminController::class, 'adminPasswordUpdate'])->name('admin.password.update'); 
+    
+    // manage owners
+    Route::controller(OwnerController::class)->group(function(){
+        Route::get('/all/owner', 'allOwner')->name('all.owner');
+        Route::get('/add/owner', 'addOwner')->name('add.owner');
+        Route::post('/owner/store', 'ownerStore')->name('owner.store');
+        Route::get('/owner/{id}/edit', 'editOwner')->name('edit.owner');
+        Route::post('/owner/update', 'updateOwner')->name('update.owner');
+        Route::get('/owner/{id}/delete', 'deleteOwner')->name('delete.owner');
+
+    });
 });
 
 Route::get('/admin/login', [AdminController::class, 'adminLogin'])->name('admin.login');

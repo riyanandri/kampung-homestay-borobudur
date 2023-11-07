@@ -12,6 +12,7 @@
     <link href="{{ asset('backend/assets/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
     <link href="{{ asset('backend/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet" />
     <link href="{{ asset('backend/assets/plugins/metismenu/css/metisMenu.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('backend/assets/plugins/datatable/css/dataTables.bootstrap5.min.css') }}" rel="stylesheet" />
     <!-- loader-->
     <link href="{{ asset('backend/assets/css/pace.min.css') }}" rel="stylesheet" />
     <script src="{{ asset('backend/assets/js/pace.min.js') }}"></script>
@@ -58,7 +59,7 @@
     <!-- Bootstrap JS -->
     <script src="{{ asset('backend/assets/js/bootstrap.bundle.min.js') }}"></script>
     <!--plugins-->
-    {{-- <script src="{{ asset('backend/assets/js/jquery.min.js') }}"></script> --}}
+    <script src="{{ asset('backend/assets/js/jquery.min.js') }}"></script>
     <script src="{{ asset('backend/assets/plugins/simplebar/js/simplebar.min.js') }}"></script>
     <script src="{{ asset('backend/assets/plugins/metismenu/js/metisMenu.min.js') }}"></script>
     <script src="{{ asset('backend/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js') }}"></script>
@@ -66,6 +67,13 @@
     <script src="{{ asset('backend/assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
     <script src="{{ asset('backend/assets/plugins/chartjs/js/chart.js') }}"></script>
     <script src="{{ asset('backend/assets/js/index.js') }}"></script>
+    <script src="{{ asset('backend/assets/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/plugins/datatable/js/dataTables.bootstrap5.min.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        });
+    </script>
     <!--app JS-->
     <script src="{{ asset('backend/assets/js/app.js') }}"></script>
     <script>
@@ -74,6 +82,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
         integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="{{ asset('backend/assets/js/code.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/validate.min.js') }}"></script>
 
     <script>
         @if (Session::has('message'))

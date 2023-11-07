@@ -22,12 +22,12 @@
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class="bx bx-category"></i>
                 </div>
-                <div class="menu-title">Application</div>
+                <div class="menu-title">Manage Owners</div>
             </a>
             <ul>
-                <li> <a href="app-emailbox.html"><i class='bx bx-radio-circle'></i>Email</a>
+                <li> <a href="{{ route('all.owner') }}"><i class='bx bx-radio-circle'></i>All Owner</a>
                 </li>
-                <li> <a href="app-chat-box.html"><i class='bx bx-radio-circle'></i>Chat Box</a>
+                <li> <a href="{{ route('add.owner') }}"><i class='bx bx-radio-circle'></i>Add Owner</a>
                 </li>
             </ul>
         </li>
