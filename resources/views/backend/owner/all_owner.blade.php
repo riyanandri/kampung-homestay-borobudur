@@ -7,9 +7,16 @@
             <div class="ps-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
-                        <a href="{{ route('add.owner') }}" class="btn btn-outline-primary px-5 radius-30">Add Owner</a>
+                        <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">All Owner</li>
                     </ol>
                 </nav>
+            </div>
+            <div class="ms-auto">
+                <div class="btn-group">
+                    <a href="{{ route('add.owner') }}" class="btn btn-primary px-5">Add Owner</a>
+                </div>
             </div>
         </div>
         <!--end breadcrumb-->
