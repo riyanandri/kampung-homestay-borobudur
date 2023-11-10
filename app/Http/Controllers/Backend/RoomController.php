@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Models\Room;
 use App\Models\Facility;
 use App\Models\MultiImage;
+use App\Models\RoomNumber;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Intervention\Image\Facades\Image;
@@ -16,8 +17,9 @@ class RoomController extends Controller
         $basic_facility = Facility::where('room_id', $id)->get();
         $multi_img = MultiImage::where('room_id', $id)->get();
         $editData = Room::find($id);
+        $roomNumber = RoomNumber::where('room_id', $id)->get();
 
-        return view('backend.room.edit', compact('editData', 'basic_facility', 'multi_img'));
+        return view('backend.room.edit', compact('editData', 'basic_facility', 'multi_img', 'roomNumber'));
     }
 
     public function updateRoom(Request $request, $id){
@@ -129,5 +131,56 @@ class RoomController extends Controller
 
         return redirect()->back()->with($notification); 
 
+    }
+
+    public function storeNumberRoom(Request $request, $id)
+    {
+        $data = new RoomNumber();
+        $data->room_id = $id;
+        $data->room_type_id = $request->room_type_id;
+        $data->room_number = $request->room_number;
+        $data->status = $request->status;
+        $data->save();
+
+        $notification = array(
+            'message' => 'Data nomor room berhasil ditambahkan',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+    }
+
+    public function editRoomNumber($id)
+    {
+        $room_number = RoomNumber::find($id);
+
+        return view('backend.room.edit_room_number',compact('room_number'));
+    }
+
+    public function updateRoomNumber(Request $request, $id)
+    {
+        $data = RoomNumber::find($id);
+        $data->room_number = $request->room_number;
+        $data->status = $request->status;
+        $data->save();
+
+       $notification = array(
+            'message' => 'Data nomor room berhasil diperbarui',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('room.type.list')->with($notification); 
+    }
+
+    public function deleteRoomNumber($id)
+    {
+        RoomNumber::find($id)->delete();
+
+        $notification = array(
+            'message' => 'Data nomor room berhasil dihapus',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('room.type.list')->with($notification); 
     }
 }

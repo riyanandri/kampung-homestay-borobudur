@@ -1,10 +1,10 @@
 <div class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
-        <div>
+        {{-- <div>
             <img src="{{ asset('backend/assets/images/logo-icon.png') }}" class="logo-icon" alt="logo icon">
-        </div>
+        </div> --}}
         <div>
-            <h4 class="logo-text">Rocker</h4>
+            <h4 class="logo-text"></h4>
         </div>
         <div class="toggle-icon ms-auto"><i class='bx bx-arrow-back'></i>
         </div>
@@ -12,7 +12,7 @@
     <!--navigation-->
     <ul class="metismenu" id="menu">
         <li>
-            <a href="widgets.html">
+            <a href="{{ route('admin.dashboard') }}">
                 <div class="parent-icon"><i class='bx bx-home-alt'></i>
                 </div>
                 <div class="menu-title">Dashboard</div>
@@ -53,7 +53,7 @@
                 </li>
             </ul>
         </li>
-        <li class="menu-label">UI Elements</li>
+        {{-- <li class="menu-label">UI Elements</li>
 
         <li>
             <a href="javascript:;" class="has-arrow">
@@ -89,7 +89,7 @@
                 </div>
                 <div class="menu-title">Support</div>
             </a>
-        </li>
+        </li> --}}
     </ul>
     <!--end navigation-->
 </div>

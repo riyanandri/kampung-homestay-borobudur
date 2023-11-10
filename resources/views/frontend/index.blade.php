@@ -5,9 +5,7 @@
     <div class="banner-area" style="height: 480px;">
         <div class="container">
             <div class="banner-content">
-                <h1>Discover a Hotel & Resort to Book a Suitable Room</h1>
-
-
+                <h1>Discover Homestay to Book a Suitable Room</h1>
             </div>
         </div>
     </div>
@@ -56,7 +54,7 @@
 
                         <div class="col-lg-4 col-md-4">
                             <button type="submit" class="default-btn btn-bg-one border-radius-5">
-                                Check Arability
+                                Check Availability
                             </button>
                         </div>
                     </div>
