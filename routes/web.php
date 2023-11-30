@@ -93,6 +93,8 @@ Route::controller(FrontendRoomController::class)->group(function(){
     Route::get('/rooms/', 'allRoomList')->name('all.rooms');
     Route::get('/room/details/{id}', 'roomDetailsPage');
     Route::get('/bookings/', 'bookingSearch')->name('booking.search');
+    Route::get('/search/room/details/{id}', 'searchRoomDetails')->name('search.room.details');
+    Route::get('/check_room_availability/', 'checkRoomAvailability')->name('check_room_availability');
 });
 
 Route::get('/admin/login', [AdminController::class, 'adminLogin'])->name('admin.login');
