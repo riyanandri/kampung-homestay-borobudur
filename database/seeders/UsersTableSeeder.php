@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
             
             // admin
             [
-                'name' => 'Admin Kampung Homestay',
+                'name' => 'Kampung Homestay Borobudur',
                 'email' => 'kampunghomestay@gmail.com',
                 'password' => Hash::make('admin@123'),
                 'role' => 'admin',

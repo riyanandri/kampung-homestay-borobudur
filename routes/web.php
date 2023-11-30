@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\OwnerController;
 use App\Http\Controllers\Backend\RoomController;
+use App\Http\Controllers\Frontend\FrontendRoomController;
 use App\Http\Controllers\Backend\RoomTypeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
@@ -85,6 +86,12 @@ Route::middleware(['auth','roles:admin'])->group(function(){
         Route::post('/room/number/{id}/update', 'updateRoomNumber')->name('update.room.number'); 
         Route::get('/room/number/{id}/delete', 'deleteRoomNumber')->name('delete.room.number');
     });
+});
+
+/// Room All Route 
+Route::controller(FrontendRoomController::class)->group(function(){
+    Route::get('/rooms/', 'allRoomList')->name('all.rooms');
+    Route::get('/room/details/{id}', 'roomDetailsPage');
 });
 
 Route::get('/admin/login', [AdminController::class, 'adminLogin'])->name('admin.login');
