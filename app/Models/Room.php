@@ -14,4 +14,9 @@ class Room extends Model
     {
         return $this->belongsTo(RoomType::class, 'room_type_id', 'id');
     }
+
+    public function roomNumbers()
+    {
+        return $this->hasMany(RoomNumber::class, 'room_id')->where('status', 'Active');
+    }
 }
