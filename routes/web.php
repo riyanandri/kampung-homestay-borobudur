@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\OwnerController;
 use App\Http\Controllers\Backend\RoomController;
 use App\Http\Controllers\Frontend\FrontendRoomController;
+use App\Http\Controllers\Frontend\BookingController;
 use App\Http\Controllers\Backend\RoomTypeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
@@ -95,6 +96,15 @@ Route::controller(FrontendRoomController::class)->group(function(){
     Route::get('/bookings/', 'bookingSearch')->name('booking.search');
     Route::get('/search/room/details/{id}', 'searchRoomDetails')->name('search.room.details');
     Route::get('/check_room_availability/', 'checkRoomAvailability')->name('check_room_availability');
+});
+
+// Auth Middleware User must have login for access this route 
+Route::middleware(['auth'])->group(function(){
+    /// CHECKOUT ALL Route 
+    Route::controller(BookingController::class)->group(function(){
+        Route::get('/checkout/', 'checkout')->name('checkout');
+        Route::post('/booking/store/', 'bookingStore')->name('user_booking_store');
+    });
 });
 
 Route::get('/admin/login', [AdminController::class, 'adminLogin'])->name('admin.login');
