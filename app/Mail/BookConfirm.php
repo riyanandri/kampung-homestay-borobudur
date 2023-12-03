@@ -38,7 +38,7 @@ class BookConfirm extends Mailable
     {
         $booking = $this->data;
         return new Content(
-            view: 'main.booking_mail',
+            view: 'mail.booking_mail',
             with: ['booking' => $this->data],
         );
     }

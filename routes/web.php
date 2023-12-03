@@ -7,6 +7,7 @@ use App\Http\Controllers\Frontend\FrontendRoomController;
 use App\Http\Controllers\Frontend\BookingController;
 use App\Http\Controllers\Backend\RoomTypeController;
 use App\Http\Controllers\Backend\RoomListController;
+use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -101,6 +102,12 @@ Route::middleware(['auth','roles:admin'])->group(function(){
         Route::get('/view/room/list', 'viewRoomList')->name('view.room.list');
         Route::get('/add/room/list', 'addRoomList')->name('add.room.list');
         Route::post('/store/room/list', 'storeRoomList')->name('store.room.list');
+    });
+
+    // admin setting
+    Route::controller(SettingController::class)->group(function(){
+        Route::get('/smtp/setting', 'smtpSetting')->name('smtp.setting');
+        Route::post('/smtp/update', 'smtpUpdate')->name('smtp.update');
     });
 });
 

@@ -13,7 +13,9 @@ use App\Models\BookingRoomList;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
+use App\Mail\BookConfirm;
 
 class BookingController extends Controller
 {
@@ -166,6 +168,20 @@ class BookingController extends Controller
         $booking->payment_status = $request->payment_status;
         $booking->status = $request->status;
         $booking->save();
+
+        /// Start Sent Email 
+        $sendmail = Booking::find($id);
+
+        $data = [
+            'check_in' => $sendmail->check_in,
+            'check_out' => $sendmail->check_out,
+            'name' => $sendmail->name,
+            'email' => $sendmail->email,
+            'phone' => $sendmail->phone,
+        ];
+
+        Mail::to($sendmail->email)->send(new BookConfirm($data));
+        /// End Sent Email 
 
         $notification = array(
             'message' => 'Informasi berhasil diupdate',
