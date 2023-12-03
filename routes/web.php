@@ -93,6 +93,7 @@ Route::middleware(['auth','roles:admin'])->group(function(){
      Route::controller(BookingController::class)->group(function(){
         Route::get('/booking/list', 'bookingList')->name('booking.list');
         Route::get('/edit_booking/{id}', 'editBooking')->name('edit_booking');
+        Route::get('/download/invoice/{id}', 'downloadInvoice')->name('download.invoice');
     });
 
     // admin room list

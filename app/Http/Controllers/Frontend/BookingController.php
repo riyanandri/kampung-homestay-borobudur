@@ -10,6 +10,7 @@ use App\Models\RoomNumber;
 use Illuminate\Http\Request;
 use App\Models\RoomBookedDate;
 use App\Models\BookingRoomList;
+use Barryvdh\DomPDF\Facade\Pdf;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -259,8 +260,8 @@ class BookingController extends Controller
         }
     }
 
-    public function assignRoomDelete($id){
-
+    public function assignRoomDelete($id)
+    {
         $assign_room = BookingRoomList::find($id);
         $assign_room->delete();
 
@@ -268,7 +269,18 @@ class BookingController extends Controller
             'message' => 'Assign Room Deleted Successfully',
             'alert-type' => 'success'
         ); 
-        return redirect()->back()->with($notification); 
 
-     }
+        return redirect()->back()->with($notification); 
+    }
+
+    public function downloadInvoice($id)
+    {
+        $editData = Booking::with('room')->find($id);
+        $pdf = Pdf::loadView('backend.booking.booking_invoice',compact('editData'))->setPaper('a4')->setOption([
+            'tempDir' => public_path(),
+            'chroot' => public_path(),
+        ]);
+
+        return $pdf->download('invoice.pdf');
+    }
 }
