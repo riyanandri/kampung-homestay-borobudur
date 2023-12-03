@@ -87,6 +87,12 @@ Route::middleware(['auth','roles:admin'])->group(function(){
         Route::post('/room/number/{id}/update', 'updateRoomNumber')->name('update.room.number'); 
         Route::get('/room/number/{id}/delete', 'deleteRoomNumber')->name('delete.room.number');
     });
+
+     // admin booking
+     Route::controller(BookingController::class)->group(function(){
+        Route::get('/booking/list', 'bookingList')->name('booking.list');
+        Route::get('/edit_booking/{id}', 'editBooking')->name('edit_booking');
+    });
 });
 
 /// Room All Route 
@@ -105,6 +111,11 @@ Route::middleware(['auth'])->group(function(){
         Route::get('/checkout/', 'checkout')->name('checkout');
         Route::post('/booking/store/', 'bookingStore')->name('user_booking_store');
         Route::post('/checkout/store/', 'checkoutStore')->name('checkout.store');
+        Route::post('/update/booking/status/{id}', 'updateBookingStatus')->name('update.booking.status');
+        Route::post('/update/booking/{id}', 'updateBooking')->name('update.booking');
+        Route::get('/assign_room/{id}', 'assignRoom')->name('assign_room');
+        Route::get('/assign_room/store/{booking_id}/{room_number_id}', 'assignRoomStore')->name('assign_room_store');
+        Route::get('/assign_room_delete/{id}', 'assignRoomDelete')->name('assign_room_delete');
     });
 });
 

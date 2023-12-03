@@ -6,8 +6,10 @@ use Carbon\Carbon;
 use App\Models\Room;
 use App\Models\Booking;
 use Carbon\CarbonPeriod;
+use App\Models\RoomNumber;
 use Illuminate\Http\Request;
 use App\Models\RoomBookedDate;
+use App\Models\BookingRoomList;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -142,4 +144,131 @@ class BookingController extends Controller
         ); 
         return redirect('/')->with($notification);
     }
+
+    public function bookingList()
+    {
+        $allData = Booking::orderBy('id','desc')->get();
+
+        return view('backend.booking.booking_list',compact('allData'));
+    }
+
+    public function editBooking($id)
+    {
+        $editData = Booking::with('room')->find($id);
+
+        return view('backend.booking.edit_booking',compact('editData'));
+    }
+
+    public function updateBookingStatus(Request $request, $id)
+    {
+        $booking = Booking::find($id);
+        $booking->payment_status = $request->payment_status;
+        $booking->status = $request->status;
+        $booking->save();
+
+        $notification = array(
+            'message' => 'Informasi berhasil diupdate',
+            'alert-type' => 'success'
+        ); 
+
+        return redirect()->back()->with($notification);  
+    }
+    
+    public function updateBooking(Request $request, $id)
+    {
+        if ($request->available_room < $request->number_of_rooms) {
+
+            $notification = array(
+                'message' => 'Ada sesuatu yang salah, silahkan coba lagi!',
+                'alert-type' => 'error'
+            ); 
+            return redirect()->back()->with($notification);  
+        }
+
+        $data = Booking::find($id);
+        $data->number_of_rooms = $request->number_of_rooms;
+        $data->check_in = date('Y-m-d', strtotime($request->check_in));
+        $data->check_out = date('Y-m-d', strtotime($request->check_out));
+        $data->save();
+
+        BookingRoomList::where('booking_id', $id)->delete();
+        RoomBookedDate::where('booking_id', $id)->delete();
+
+        $sdate = date('Y-m-d',strtotime($request->check_in ));
+        $edate = date('Y-m-d',strtotime($request->check_out));
+        $eldate = Carbon::create($edate)->subDay();
+        $d_period = CarbonPeriod::create($sdate,$eldate);
+        foreach ($d_period as $period) {
+            $booked_dates = new RoomBookedDate();
+            $booked_dates->booking_id = $data->id;
+            $booked_dates->room_id = $data->room_id;
+            $booked_dates->book_date = date('Y-m-d', strtotime($period));
+            $booked_dates->save();
+        }
+
+        $notification = array(
+            'message' => 'Pesanan berhasil diupdate',
+            'alert-type' => 'success'
+        ); 
+    
+        return redirect()->back()->with($notification);   
+    }
+
+    public function assignRoom($booking_id)
+    {
+        $booking = Booking::find($booking_id);
+
+        $booking_date_array = RoomBookedDate::where('booking_id',$booking_id)->pluck('book_date')->toArray();
+
+        $check_date_booking_ids = RoomBookedDate::whereIn('book_date',$booking_date_array)->where('room_id',$booking->room_id)->distinct()->pluck('booking_id')->toArray();
+
+        $booking_ids = Booking::whereIn('id',$check_date_booking_ids)->pluck('id')->toArray();
+
+        $assign_room_ids = BookingRoomList::whereIn('booking_id',$booking_ids)->pluck('room_number_id')->toArray();
+
+        $room_numbers = RoomNumber::where('room_id',$booking->room_id)->whereNotIn('id',$assign_room_ids)->where('status','Active')->get();
+
+        return view('backend.booking.assign_room',compact('booking','room_numbers'));
+    }
+
+    public function assignRoomStore($booking_id, $room_number_id)
+    {
+        $booking = Booking::find($booking_id);
+        $check_data = BookingRoomList::where('booking_id',$booking_id)->count();
+
+        if ($check_data < $booking->number_of_rooms) {
+            $assign_data = new BookingRoomList();
+            $assign_data->booking_id = $booking_id;
+            $assign_data->room_id = $booking->room_id;
+            $assign_data->room_number_id = $room_number_id;
+            $assign_data->save();
+
+            $notification = array(
+                'message' => 'Room Assign Successfully',
+                'alert-type' => 'success'
+            ); 
+        return redirect()->back()->with($notification);   
+
+        } else {
+
+            $notification = array(
+                'message' => 'Room Already Assign',
+                'alert-type' => 'error'
+            ); 
+            return redirect()->back()->with($notification); 
+        }
+    }
+
+    public function assignRoomDelete($id){
+
+        $assign_room = BookingRoomList::find($id);
+        $assign_room->delete();
+
+        $notification = array(
+            'message' => 'Assign Room Deleted Successfully',
+            'alert-type' => 'success'
+        ); 
+        return redirect()->back()->with($notification); 
+
+     }
 }
