@@ -98,6 +98,8 @@ Route::middleware(['auth','roles:admin'])->group(function(){
     // admin room list
     Route::controller(RoomListController::class)->group(function(){
         Route::get('/view/room/list', 'viewRoomList')->name('view.room.list');
+        Route::get('/add/room/list', 'addRoomList')->name('add.room.list');
+        Route::post('/store/room/list', 'storeRoomList')->name('store.room.list');
     });
 });
 
