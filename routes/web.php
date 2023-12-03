@@ -120,11 +120,19 @@ Route::middleware(['auth'])->group(function(){
         Route::get('/checkout/', 'checkout')->name('checkout');
         Route::post('/booking/store/', 'bookingStore')->name('user_booking_store');
         Route::post('/checkout/store/', 'checkoutStore')->name('checkout.store');
+
+        // booking update
         Route::post('/update/booking/status/{id}', 'updateBookingStatus')->name('update.booking.status');
         Route::post('/update/booking/{id}', 'updateBooking')->name('update.booking');
+
+        // assign room route
         Route::get('/assign_room/{id}', 'assignRoom')->name('assign_room');
         Route::get('/assign_room/store/{booking_id}/{room_number_id}', 'assignRoomStore')->name('assign_room_store');
         Route::get('/assign_room_delete/{id}', 'assignRoomDelete')->name('assign_room_delete');
+
+        // user booking route
+        Route::get('/user/booking', 'userBooking')->name('user.booking');
+        Route::get('/user/invoice/{id}', 'userInvoice')->name('user.invoice');
     });
 });
 
