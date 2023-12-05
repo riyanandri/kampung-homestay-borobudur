@@ -109,6 +109,8 @@ Route::middleware(['auth','roles:admin'])->group(function(){
     Route::controller(SettingController::class)->group(function(){
         Route::get('/smtp/setting', 'smtpSetting')->name('smtp.setting');
         Route::post('/smtp/update', 'smtpUpdate')->name('smtp.update');
+        Route::get('/site/setting', 'siteSetting')->name('site.setting');
+        Route::post('/site/update', 'siteUpdate')->name('site.update');
     });
 
     // admin report

@@ -1,3 +1,6 @@
+@php
+    $setting = App\Models\SiteSetting::find(1);
+@endphp
 <footer class="footer-area footer-bg">
     <div class="container">
         <div class="footer-top pt-100 pb-70">
@@ -6,7 +9,7 @@
                     <div class="footer-widget">
                         <div class="footer-logo">
                             <a href="index.html">
-                                <img src="assets/img/logos/footer-logo1.png" alt="Images">
+                                <img src="{{ asset($setting->logo) }}" alt="Images">
                             </a>
                         </div>
                         <p>
@@ -16,15 +19,15 @@
                         <ul class="footer-list-contact">
                             <li>
                                 <i class='bx bx-home-alt'></i>
-                                <a href="#">123 Stanton, Virginia, USA</a>
+                                <a href="#">{{ $setting->address }}</a>
                             </li>
                             <li>
                                 <i class='bx bx-phone-call'></i>
-                                <a href="tel:+1-(123)-456-7890">+1 (123) 456 7890</a>
+                                <a href="tel:+1-(123)-456-7890">{{ $setting->phone }}</a>
                             </li>
                             <li>
                                 <i class='bx bx-envelope'></i>
-                                <a href="mailto:hello@atoli.com">hello@atoli.com</a>
+                                <a href="mailto:hello@atoli.com">{{ $setting->email }}</a>
                             </li>
                         </ul>
                     </div>
@@ -157,7 +160,7 @@
                             Copyright @
                             <script>
                                 document.write(new Date().getFullYear())
-                            </script> KampungHomestayBorobudur. All Rights Reserved
+                            </script> {{ $setting->copyright }}. All Rights Reserved
                         </p>
                     </div>
                 </div>
@@ -166,19 +169,13 @@
                     <div class="social-icon text-align2">
                         <ul class="social-link">
                             <li>
-                                <a href="#" target="_blank"><i class='bx bxl-facebook'></i></a>
+                                <a href="{{ $setting->facebook }}" target="_blank"><i class='bx bxl-facebook'></i></a>
                             </li>
                             <li>
-                                <a href="#" target="_blank"><i class='bx bxl-twitter'></i></a>
+                                <a href="{{ $setting->instagram }}" target="_blank"><i class='bx bxl-instagram'></i></a>
                             </li>
                             <li>
-                                <a href="#" target="_blank"><i class='bx bxl-instagram'></i></a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank"><i class='bx bxl-pinterest-alt'></i></a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank"><i class='bx bxl-youtube'></i></a>
+                                <a href="{{ $setting->youtube }}" target="_blank"><i class='bx bxl-youtube'></i></a>
                             </li>
                         </ul>
                     </div>
