@@ -92,16 +92,16 @@
                                                     <button type="submit" class="btn btn-primary">Sign in</button>
                                                 </div>
                                             </div>
-                                            <div class="col-12">
+                                            {{-- <div class="col-12">
                                                 <div class="text-center ">
                                                     <p class="mb-0">Don't have an account yet? <a
                                                             href="authentication-signup.html">Sign up here</a>
                                                     </p>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         </form>
                                     </div>
-                                    <div class="login-separater text-center mb-5"> <span>OR SIGN IN WITH</span>
+                                    {{-- <div class="login-separater text-center mb-5"> <span>OR SIGN IN WITH</span>
                                         <hr>
                                     </div>
                                     <div class="list-inline contacts-social text-center">
@@ -117,7 +117,7 @@
                                         <a href="javascript:;"
                                             class="list-inline-item bg-linkedin text-white border-0 rounded-3"><i
                                                 class="bx bxl-linkedin"></i></a>
-                                    </div>
+                                    </div> --}}
 
                                 </div>
                             </div>

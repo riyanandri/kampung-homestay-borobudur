@@ -23,28 +23,23 @@
                                 Home
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="about.html" class="nav-link">
-                                About
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                Restaurant
-                            </a>
-                        </li>
+                        {{-- <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    Restaurant
+                                </a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                Recreation
-                            </a>
-                        </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    Recreation
+                                </a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                Blog
-                            </a>
-                        </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    Blog
+                                </a>
+                            </li> --}}
 
                         @php
                             $room = App\Models\Room::latest()->get();
@@ -64,6 +59,12 @@
                                     </li>
                                 @endforeach
                             </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link">
+                                About
+                            </a>
                         </li>
 
                         <li class="nav-item">

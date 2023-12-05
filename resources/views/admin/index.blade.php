@@ -75,7 +75,7 @@
                     <div class="card-header">
                         <div class="d-flex align-items-center">
                             <div>
-                                <h6 class="mb-0">Sales Overview</h6>
+                                <h6 class="mb-0">Overview</h6>
                             </div>
                             <div class="dropdown ms-auto">
                                 <a class="dropdown-toggle dropdown-toggle-nocaret" href="#"
@@ -137,7 +137,7 @@
                     <div class="card-header">
                         <div class="d-flex align-items-center">
                             <div>
-                                <h6 class="mb-0">Trending Products</h6>
+                                <h6 class="mb-0">Rooms</h6>
                             </div>
                             <div class="dropdown ms-auto">
                                 <a class="dropdown-toggle dropdown-toggle-nocaret" href="#"
@@ -166,23 +166,23 @@
                     <ul class="list-group list-group-flush">
                         <li
                             class="list-group-item d-flex bg-transparent justify-content-between align-items-center border-top">
-                            Jeans <span class="badge bg-success rounded-pill">25</span>
+                            Standard <span class="badge bg-success rounded-pill">25</span>
                         </li>
                         <li class="list-group-item d-flex bg-transparent justify-content-between align-items-center">
-                            T-Shirts <span class="badge bg-danger rounded-pill">10</span>
+                            Deluxe <span class="badge bg-danger rounded-pill">10</span>
                         </li>
                         <li class="list-group-item d-flex bg-transparent justify-content-between align-items-center">
-                            Shoes <span class="badge bg-primary rounded-pill">65</span>
+                            Twin <span class="badge bg-primary rounded-pill">65</span>
                         </li>
                         <li class="list-group-item d-flex bg-transparent justify-content-between align-items-center">
-                            Lingerie <span class="badge bg-warning text-dark rounded-pill">14</span>
+                            Suite <span class="badge bg-warning text-dark rounded-pill">14</span>
                         </li>
                     </ul>
                 </div>
             </div>
         </div><!--end row-->
 
-        <div class="card radius-10">
+        {{-- <div class="card radius-10">
             <div class="card-header">
                 <div class="d-flex align-items-center">
                     <div>
@@ -324,7 +324,7 @@
                     </table>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
 
 

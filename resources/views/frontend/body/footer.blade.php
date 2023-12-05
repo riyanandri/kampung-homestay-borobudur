@@ -157,8 +157,7 @@
                             Copyright @
                             <script>
                                 document.write(new Date().getFullYear())
-                            </script> Atoli. All Rights Reserved by
-                            <a href="https://hibootstrap.com/" target="_blank">HiBootstrap</a>
+                            </script> KampungHomestayBorobudur. All Rights Reserved
                         </p>
                     </div>
                 </div>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\OwnerController;
+use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Backend\RoomController;
 use App\Http\Controllers\Frontend\FrontendRoomController;
 use App\Http\Controllers\Frontend\BookingController;
@@ -108,6 +109,12 @@ Route::middleware(['auth','roles:admin'])->group(function(){
     Route::controller(SettingController::class)->group(function(){
         Route::get('/smtp/setting', 'smtpSetting')->name('smtp.setting');
         Route::post('/smtp/update', 'smtpUpdate')->name('smtp.update');
+    });
+
+    // admin report
+    Route::controller(ReportController::class)->group(function(){
+        Route::get('/booking/report/', 'bookingReport')->name('booking.report');
+        Route::post('/search-by-date', 'searchByDate')->name('search-by-date');
     });
 });
 
