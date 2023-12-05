@@ -54,7 +54,6 @@
             </ul>
         </li>
         <li class="menu-label">Booking Manage</li>
-
         <li>
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class='bx bx-cart'></i>
@@ -85,6 +84,18 @@
             <a class="has-arrow" href="javascript:;">
                 <div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
                 </div>
+                <div class="menu-title">Booking Report</div>
+            </a>
+            <ul>
+                <li> <a href="{{ route('booking.report') }}"><i class='bx bx-radio-circle'></i>Booking Report</a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-label">Others</li>
+        <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
+                </div>
                 <div class="menu-title">Setting</div>
             </a>
             <ul>
@@ -98,10 +109,10 @@
             <a class="has-arrow" href="javascript:;">
                 <div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
                 </div>
-                <div class="menu-title">Reports</div>
+                <div class="menu-title">Role & Permission</div>
             </a>
             <ul>
-                <li> <a href="{{ route('booking.report') }}"><i class='bx bx-radio-circle'></i>Booking Report</a>
+                <li> <a href="{{ route('all.permission') }}"><i class='bx bx-radio-circle'></i>All Permission</a>
                 </li>
             </ul>
         </li>
