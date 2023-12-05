@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Frontend;
 
 use Carbon\Carbon;
 use App\Models\Room;
+use App\Models\User;
 use App\Models\Booking;
 use Carbon\CarbonPeriod;
+use App\Mail\BookConfirm;
 use App\Models\RoomNumber;
 use Illuminate\Http\Request;
 use App\Models\RoomBookedDate;
@@ -14,8 +16,9 @@ use Barryvdh\DomPDF\Facade\Pdf;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use App\Notifications\BookingComplete;
 use Illuminate\Support\Facades\Session;
-use App\Mail\BookConfirm;
+use Illuminate\Support\Facades\Notification;
 
 class BookingController extends Controller
 {
@@ -73,8 +76,10 @@ class BookingController extends Controller
         return redirect()->route('checkout');
     }
 
-    public function checkoutStore(Request $request){
-
+    public function checkoutStore(Request $request)
+    {
+        $user = User::where('role','admin')->get();
+        
         $this->validate($request,[
             'name' => 'required',
             'email' => 'required',
@@ -144,7 +149,10 @@ class BookingController extends Controller
         $notification = array(
             'message' => 'Pemesanan Berhasil Ditambahkan',
             'alert-type' => 'success'
-        ); 
+        );
+        
+        Notification::send($user, new BookingComplete($request->name));
+        
         return redirect('/')->with($notification);
     }
 
@@ -318,4 +326,16 @@ class BookingController extends Controller
 
         return $pdf->download('invoice.pdf');
     }
+
+    public function markAsRead(Request $request , $notificationId)
+    {
+        $user = Auth::user();
+        $notification = $user->notifications()->where('id',$notificationId)->first();
+
+        if ($notification) {
+            $notification->markAsRead();
+        }
+
+        return response()->json(['count' => $user->unreadNotifications()->count()]);
+     }
 }

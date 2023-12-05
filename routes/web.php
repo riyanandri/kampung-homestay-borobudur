@@ -152,4 +152,9 @@ Route::middleware(['auth'])->group(function(){
     });
 });
 
+/// Notification All Route 
+Route::controller(BookingController::class)->group(function(){
+    Route::post('/mark-notification-as-read/{notification}', 'markAsRead');
+});
+
 Route::get('/admin/login', [AdminController::class, 'adminLogin'])->name('admin.login');
