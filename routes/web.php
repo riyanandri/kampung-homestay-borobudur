@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\OwnerController;
 use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Backend\RoleController;
@@ -150,6 +151,10 @@ Route::middleware(['auth','roles:admin'])->group(function(){
         Route::post('/admin/roles/update/{id}', 'adminRolesUpdate')->name('admin.roles.update');
         Route::get('/admin/delete/roles/{id}', 'adminDeleteRoles')->name('admin.delete.roles');
     });
+
+    Route::controller(ContactController::class)->group(function(){
+        Route::get('/contact/message', 'adminContactMessage')->name('contact.message');
+    });
 });
 
 /// Room All Route 
@@ -159,6 +164,11 @@ Route::controller(FrontendRoomController::class)->group(function(){
     Route::get('/bookings/', 'bookingSearch')->name('booking.search');
     Route::get('/search/room/details/{id}', 'searchRoomDetails')->name('search.room.details');
     Route::get('/check_room_availability/', 'checkRoomAvailability')->name('check_room_availability');
+});
+
+Route::controller(ContactController::class)->group(function(){
+    Route::get('/contact-us', 'contactUs')->name('contact.us');
+    Route::post('/store/contact', 'StoreContactUs')->name('store.contact');
 });
 
 // Auth Middleware User must have login for access this route 
