@@ -120,7 +120,7 @@ Route::middleware(['auth','roles:admin'])->group(function(){
         Route::post('/search-by-date', 'searchByDate')->name('search-by-date');
     });
 
-      // Role permission
+      // Permission
       Route::controller(RoleController::class)->group(function(){
         Route::get('/all/permission', 'allPermission')->name('all.permission');
         Route::get('/add/permission', 'addPermission')->name('add.permission');
@@ -128,6 +128,27 @@ Route::middleware(['auth','roles:admin'])->group(function(){
         Route::get('/edit/permission/{id}', 'editPermission')->name('edit.permission');
         Route::post('/update/permission', 'updatePermission')->name('update.permission');
         Route::get('/delete/permission/{id}', 'deletePermission')->name('delete.permission');
+    });
+
+    // Roles
+    Route::controller(RoleController::class)->group(function(){
+        Route::get('/all/roles', 'allRoles')->name('all.roles');
+        Route::get('/add/roles', 'addRoles')->name('add.roles');
+        Route::post('/store/roles', 'storeRoles')->name('store.roles');
+        Route::get('/edit/roles/{id}', 'editRoles')->name('edit.roles');
+        Route::post('/update/roles', 'updateRoles')->name('update.roles');
+        Route::get('/delete/roles/{id}', 'deleteRoles')->name('delete.roles');
+
+        Route::get('/import/permission', 'importPermission')->name('import.permission');
+        Route::get('/export', 'export')->name('export');
+        Route::post('/import', 'import')->name('import');
+
+        Route::get('/add/roles/permission', 'addRolesPermission')->name('add.roles.permission');
+        Route::post('/role/permission/store', 'rolePermissionStore')->name('role.permission.store');
+        Route::get('/all/roles/permission', 'allRolesPermission')->name('all.roles.permission');
+        Route::get('/admin/edit/roles/{id}', 'adminEditRoles')->name('admin.edit.roles');
+        Route::post('/admin/roles/update/{id}', 'adminRolesUpdate')->name('admin.roles.update');
+        Route::get('/admin/delete/roles/{id}', 'adminDeleteRoles')->name('admin.delete.roles');
     });
 });
 
