@@ -155,6 +155,15 @@ Route::middleware(['auth','roles:admin'])->group(function(){
     Route::controller(ContactController::class)->group(function(){
         Route::get('/contact/message', 'adminContactMessage')->name('contact.message');
     });
+
+    Route::controller(AdminController::class)->group(function(){
+        Route::get('/all/admin', 'allAdmin')->name('all.admin');
+        Route::get('/add/admin', 'addAdmin')->name('add.admin');
+        Route::post('/store/admin', 'storeAdmin')->name('store.admin');
+        Route::get('/edit/admin/{id}', 'editAdmin')->name('edit.admin');
+        Route::post('/update/admin/{id}', 'updateAdmin')->name('update.admin');
+        Route::get('/delete/admin/{id}', 'deleteAdmin')->name('delete.admin');
+    });
 });
 
 /// Room All Route 
