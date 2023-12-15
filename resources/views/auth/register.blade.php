@@ -7,12 +7,12 @@
             <div class="inner-title">
                 <ul>
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="{{ url('/') }}">Beranda</a>
                     </li>
                     <li><i class='bx bx-chevron-right'></i></li>
-                    <li>Sign Up</li>
+                    <li>Daftar</li>
                 </ul>
-                <h3>Sign Up</h3>
+                <h3>Daftar</h3>
             </div>
         </div>
     </div>
@@ -26,8 +26,8 @@
                     <div class="user-all-form">
                         <div class="contact-form">
                             <div class="section-title text-center">
-                                <span class="sp-color">Sign Up</span>
-                                <h2>Create an Account!</h2>
+                                <span class="sp-color">Daftar</span>
+                                <h2>Buat akun!</h2>
                             </div>
                             <form action="{{ route('register') }}" method="POST">
                                 @csrf
@@ -49,27 +49,27 @@
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <input type="password" name="password" id="password" class="form-control"
-                                                required data-error="Please enter password" placeholder="Password">
+                                                required data-error="Please enter password" placeholder="Kata Sandi">
                                         </div>
                                     </div>
 
                                     <div class="col-12">
                                         <div class="form-group">
                                             <input class="form-control" type="password" id="password_confirmation"
-                                                name="password_confirmation" placeholder="Konfirmasi Password">
+                                                name="password_confirmation" placeholder="Ulangi kata sandi">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-12 col-md-12 text-center">
                                         <button type="submit" class="default-btn btn-bg-three border-radius-5">
-                                            Sign Up
+                                            Daftar
                                         </button>
                                     </div>
 
                                     <div class="col-12">
                                         <p class="account-desc">
-                                            Already have an account?
-                                            <a href="{{ route('login') }}">Sign In</a>
+                                            Sudah memiliki akun?
+                                            <a href="{{ route('login') }}">Masuk</a>
                                         </p>
                                     </div>
                                 </div>

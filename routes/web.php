@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Backend\AboutUsController;
 use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\OwnerController;
 use App\Http\Controllers\Backend\ReportController;
@@ -59,12 +60,12 @@ Route::middleware(['auth','roles:admin'])->group(function(){
     
     // manage owners
     Route::controller(OwnerController::class)->group(function(){
-        Route::get('/all/owner', 'allOwner')->name('all.owner');
-        Route::get('/add/owner', 'addOwner')->name('add.owner');
+        Route::get('/all/owner', 'allOwner')->name('all.owner')->middleware('permission:owner.all');
+        Route::get('/add/owner', 'addOwner')->name('add.owner')->middleware('permission:owner.add');
         Route::post('/owner/store', 'ownerStore')->name('owner.store');
-        Route::get('/owner/{id}/edit', 'editOwner')->name('edit.owner');
+        Route::get('/owner/{id}/edit', 'editOwner')->name('edit.owner')->middleware('permission:owner.edit');
         Route::post('/owner/update', 'updateOwner')->name('update.owner');
-        Route::get('/owner/{id}/delete', 'deleteOwner')->name('delete.owner');
+        Route::get('/owner/{id}/delete', 'deleteOwner')->name('delete.owner')->middleware('permission:owner.delete');
     });
 
      // manage book area
@@ -178,6 +179,10 @@ Route::controller(FrontendRoomController::class)->group(function(){
 Route::controller(ContactController::class)->group(function(){
     Route::get('/contact-us', 'contactUs')->name('contact.us');
     Route::post('/store/contact', 'StoreContactUs')->name('store.contact');
+});
+
+Route::controller(AboutUsController::class)->group(function(){
+    Route::get('/about-us', 'aboutUs')->name('about.us');
 });
 
 // Auth Middleware User must have login for access this route 

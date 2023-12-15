@@ -4,7 +4,7 @@
 <div class="navbar-area">
     <!-- Menu For Mobile Device -->
     <div class="mobile-nav">
-        <a href="index.html" class="logo">
+        <a href="{{ url('/') }}" class="logo">
             <img src="{{ asset($setting->logo) }}" class="logo-one" alt="Logo">
             <img src="{{ asset($setting->logo) }}" class="logo-two" alt="Logo">
         </a>
@@ -23,26 +23,9 @@
                     <ul class="navbar-nav m-auto">
                         <li class="nav-item">
                             <a href="{{ url('/') }}" class="nav-link active">
-                                Home
+                                Beranda
                             </a>
                         </li>
-                        {{-- <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    Restaurant
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    Recreation
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    Blog
-                                </a>
-                            </li> --}}
 
                         @php
                             $room = App\Models\Room::latest()->get();
@@ -50,7 +33,7 @@
 
                         <li class="nav-item">
                             <a href="{{ route('all.rooms') }}" class="nav-link">
-                                All Rooms
+                                Semua Kamar
                                 <i class='bx bx-chevron-down'></i>
                             </a>
                             <ul class="dropdown-menu">
@@ -65,24 +48,24 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="about.html" class="nav-link">
-                                About
+                            <a href="{{ route('about.us') }}" class="nav-link">
+                                Tentang Kami
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a href="{{ route('contact.us') }}" class="nav-link">
-                                Contact
+                                Kontak
                             </a>
                         </li>
 
                         <li class="nav-item-btn">
-                            <a href="#" class="default-btn btn-bg-one border-radius-5">Book Now</a>
+                            <a href="#" class="default-btn btn-bg-one border-radius-5">Pesan Sekarang</a>
                         </li>
                     </ul>
 
                     <div class="nav-btn">
-                        <a href="#" class="default-btn btn-bg-one border-radius-5">Book Now</a>
+                        <a href="#" class="default-btn btn-bg-one border-radius-5">Pesan Sekarang</a>
                     </div>
                 </div>
             </nav>

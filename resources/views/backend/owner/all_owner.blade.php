@@ -46,10 +46,14 @@
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->homestay }}</td>
                                     <td>
-                                        <a href="{{ route('edit.owner', $item->id) }}"
-                                            class="btn btn-warning px-3 radius-30">Edit</a>
-                                        <a href="{{ route('delete.owner', $item->id) }}"
-                                            class="btn btn-danger px-3 radius-30" id="delete">Delete</a>
+                                        @if (Auth::user()->can('owner.edit'))
+                                            <a href="{{ route('edit.owner', $item->id) }}"
+                                                class="btn btn-warning px-3 radius-30">Edit</a>
+                                        @endif
+                                        @if (Auth::user()->can('owner.delete'))
+                                            <a href="{{ route('delete.owner', $item->id) }}"
+                                                class="btn btn-danger px-3 radius-30" id="delete">Delete</a>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach

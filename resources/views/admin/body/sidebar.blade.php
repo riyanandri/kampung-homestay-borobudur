@@ -18,19 +18,25 @@
                 <div class="menu-title">Dashboard</div>
             </a>
         </li>
-        <li>
-            <a href="javascript:;" class="has-arrow">
-                <div class="parent-icon"><i class="bx bx-category"></i>
-                </div>
-                <div class="menu-title">Manage Owners</div>
-            </a>
-            <ul>
-                <li> <a href="{{ route('all.owner') }}"><i class='bx bx-radio-circle'></i>All Owner</a>
-                </li>
-                <li> <a href="{{ route('add.owner') }}"><i class='bx bx-radio-circle'></i>Add Owner</a>
-                </li>
-            </ul>
-        </li>
+        @if (Auth::user()->can('owner.menu'))
+            <li>
+                <a href="javascript:;" class="has-arrow">
+                    <div class="parent-icon"><i class="bx bx-category"></i>
+                    </div>
+                    <div class="menu-title">Manage Owners</div>
+                </a>
+                <ul>
+                    @if (Auth::user()->can('owner.all'))
+                        <li> <a href="{{ route('all.owner') }}"><i class='bx bx-radio-circle'></i>All Owner</a>
+                        </li>
+                    @endif
+                    @if (Auth::user()->can('owner.add'))
+                        <li> <a href="{{ route('add.owner') }}"><i class='bx bx-radio-circle'></i>Add Owner</a>
+                        </li>
+                    @endif
+                </ul>
+            </li>
+        @endif
         <li>
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class="bx bx-category"></i>
