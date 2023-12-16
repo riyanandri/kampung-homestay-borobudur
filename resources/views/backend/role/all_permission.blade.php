@@ -9,19 +9,19 @@
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">All Permission</li>
+                        <li class="breadcrumb-item active" aria-current="page">Daftar Hak Akses</li>
                     </ol>
                 </nav>
             </div>
             <div class="ms-auto">
                 <div class="btn-group">
-                    <a href="{{ route('add.permission') }}" class="btn btn-primary px-5">Add Permission </a>
+                    <a href="{{ route('add.permission') }}" class="btn btn-primary px-5">Tambahkan Hak Akses</a>
                 </div>
                 <div class="btn-group">
-                    <a href="{{ route('import.permission') }}" class="btn btn-warning px-5">Import </a>
+                    <a href="{{ route('import.permission') }}" class="btn btn-warning px-5">Impor</a>
                 </div>
                 <div class="btn-group">
-                    <a href="{{ route('export') }}" class="btn btn-danger px-5">Export </a>
+                    <a href="{{ route('export') }}" class="btn btn-danger px-5">Ekspor</a>
                 </div>
             </div>
         </div>
@@ -33,10 +33,10 @@
                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
-                                <th>Sl</th>
-                                <th>Permission Name </th>
-                                <th>Permission Group</th>
-                                <th>Action</th>
+                                <th>No</th>
+                                <th>Nama Hak Akses</th>
+                                <th>Grup</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -48,9 +48,9 @@
                                     <td>
                                         <a href="{{ route('edit.permission', $item->id) }}"
                                             class="btn btn-warning px-3 radius-30">
-                                            Edit</a>
+                                            Ubah</a>
                                         <a href="{{ route('delete.permission', $item->id) }}"
-                                            class="btn btn-danger px-3 radius-30" id="delete"> Delete</a>
+                                            class="btn btn-danger px-3 radius-30" id="delete">Hapus</a>
                                     </td>
                                 </tr>
                             @endforeach

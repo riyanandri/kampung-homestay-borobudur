@@ -12,13 +12,13 @@
     <div class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-            <div class="breadcrumb-title pe-3">Edit Roles in Permission </div>
+            <div class="breadcrumb-title pe-3">Ubah Peran & Hak Akses</div>
             <div class="ps-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Edit Roles in Permission</li>
+                        <li class="breadcrumb-item active" aria-current="page">Ubah Peran & Hak Akses</li>
                     </ol>
                 </nav>
             </div>
@@ -34,13 +34,13 @@
                                     enctype="multipart/form-data">
                                     @csrf
                                     <div class="col-md-6">
-                                        <label for="input1" class="form-label">Roles Name </label>
+                                        <label for="input1" class="form-label">Nama Peran</label>
                                         <h3>{{ $role->name }}</h3>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value=""
                                             id="CheckDefaultmain">
-                                        <label class="form-check-label" for="CheckDefaultmain">Permission All </label>
+                                        <label class="form-check-label" for="CheckDefaultmain">Daftar Hak Akses</label>
                                     </div>
                                     <hr>
                                     @foreach ($permission_groups as $group)
@@ -76,7 +76,7 @@
 
                                     <div class="col-md-12">
                                         <div class="d-md-flex d-grid align-items-center gap-3">
-                                            <button type="submit" class="btn btn-primary px-4">Save Changes </button>
+                                            <button type="submit" class="btn btn-primary px-4">Simpan Perubahan</button>
                                         </div>
                                     </div>
                                 </form>

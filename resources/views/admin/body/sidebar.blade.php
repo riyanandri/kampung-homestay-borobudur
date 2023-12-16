@@ -131,42 +131,42 @@
             </li>
         @endif
         <li class="menu-label">Lain-Lain</li>
-        @if (Auth::user()->can('setting.menu'))
-            <li>
-                <a class="has-arrow" href="javascript:;">
-                    <div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
-                    </div>
-                    <div class="menu-title">Pengaturan</div>
-                </a>
-                <ul>
-                    <li> <a href="{{ route('smtp.setting') }}"><i class='bx bx-radio-circle'></i>Pengaturan SMTP</a>
-                    </li>
-                    <li> <a href="{{ route('site.setting') }}"><i class='bx bx-radio-circle'></i>Pengaturan Web</a>
-                    </li>
-                </ul>
-            </li>
-        @endif
-        @if (Auth::user()->can('role.permission.menu'))
-            <li>
-                <a class="has-arrow" href="javascript:;">
-                    <div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
-                    </div>
-                    <div class="menu-title">Peran & Hak Akses</div>
-                </a>
-                <ul>
-                    <li> <a href="{{ route('all.permission') }}"><i class='bx bx-radio-circle'></i>Hak Akses</a>
-                    </li>
-                    <li> <a href="{{ route('all.roles') }}"><i class='bx bx-radio-circle'></i>Peran</a>
-                    </li>
-                    <li> <a href="{{ route('add.roles.permission') }}"><i class='bx bx-radio-circle'></i>Peran & Hak
-                            Akses</a>
-                    </li>
-                    <li> <a href="{{ route('all.roles.permission') }}"><i class='bx bx-radio-circle'></i>Daftar Peran &
-                            Hak Akses</a>
-                    </li>
-                </ul>
-            </li>
-        @endif
+        {{-- @if (Auth::user()->can('setting.menu')) --}}
+        <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
+                </div>
+                <div class="menu-title">Pengaturan</div>
+            </a>
+            <ul>
+                <li> <a href="{{ route('smtp.setting') }}"><i class='bx bx-radio-circle'></i>Pengaturan SMTP</a>
+                </li>
+                <li> <a href="{{ route('site.setting') }}"><i class='bx bx-radio-circle'></i>Pengaturan Web</a>
+                </li>
+            </ul>
+        </li>
+        {{-- @endif --}}
+        {{-- @if (Auth::user()->can('role.permission.menu')) --}}
+        <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
+                </div>
+                <div class="menu-title">Peran & Hak Akses</div>
+            </a>
+            <ul>
+                <li> <a href="{{ route('all.permission') }}"><i class='bx bx-radio-circle'></i>Hak Akses</a>
+                </li>
+                <li> <a href="{{ route('all.roles') }}"><i class='bx bx-radio-circle'></i>Peran</a>
+                </li>
+                <li> <a href="{{ route('add.roles.permission') }}"><i class='bx bx-radio-circle'></i>Peran & Hak
+                        Akses</a>
+                </li>
+                <li> <a href="{{ route('all.roles.permission') }}"><i class='bx bx-radio-circle'></i>Daftar Peran &
+                        Hak Akses</a>
+                </li>
+            </ul>
+        </li>
+        {{-- @endif --}}
         <li>
             <a class="has-arrow" href="javascript:;">
                 <div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
