@@ -4,8 +4,8 @@
 <div class="team-area-three pt-100 pb-70">
     <div class="container">
         <div class="section-title text-center">
-            <span class="sp-color">TEAM</span>
-            <h2>Let's Meet Up With Our Special Team Members</h2>
+            <span class="sp-color">Owner</span>
+            <h2>Mari Tahu Lebih Jauh Dari Owner Homestay</h2>
         </div>
         <div class="team-slider-two owl-carousel owl-theme pt-45">
             @foreach ($owner as $item)

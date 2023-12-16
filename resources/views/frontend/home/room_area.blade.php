@@ -6,7 +6,7 @@
 <div class="room-area pt-100 pb-70 section-bg" style="background-color:#ffffff">
     <div class="container">
         <div class="section-title text-center">
-            <span class="sp-color">KAMAR</span>
+            <span class="sp-color">Kamar</span>
             <h2>Kamar & Tarif</h2>
         </div>
         <div class="row pt-45">
@@ -28,17 +28,10 @@
                                         <a
                                             href="{{ url('room/details/' . $item->id) }}">{{ $item['roomType']['name'] }}</a>
                                     </h3>
-                                    <span>Rp. {{ $item->price }} / Per Night </span>
-                                    <div class="rating">
-                                        <i class='bx bxs-star'></i>
-                                        <i class='bx bxs-star'></i>
-                                        <i class='bx bxs-star'></i>
-                                        <i class='bx bxs-star'></i>
-                                        <i class='bx bxs-star'></i>
-                                    </div>
+                                    <span>Rp. {{ $item->price }}/Malam</span>
                                     <p>{{ $item->short_desc }}</p>
                                     <ul>
-                                        <li><i class='bx bx-user'></i> {{ $item->room_capacity }} Person</li>
+                                        <li><i class='bx bx-user'></i> {{ $item->room_capacity }} Orang</li>
                                         <li><i class='bx bx-expand'></i> {{ $item->size }} ft2</li>
                                     </ul>
 
@@ -48,7 +41,7 @@
                                     </ul>
 
                                     <a href="room-details.html" class="book-more-btn">
-                                        Book Now
+                                        Pesan Sekarang
                                     </a>
                                 </div>
                             </div>

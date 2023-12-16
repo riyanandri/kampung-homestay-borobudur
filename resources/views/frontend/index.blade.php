@@ -86,7 +86,7 @@
     <!-- Testimonials Area Three End -->
 
     <!-- FAQ Area -->
-    @include('frontend.home.faq')
+    {{-- @include('frontend.home.faq') --}}
     <!-- FAQ Area End -->
 
     <!-- Blog Area -->
