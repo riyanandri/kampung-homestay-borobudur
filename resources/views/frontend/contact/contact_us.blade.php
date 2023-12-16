@@ -7,12 +7,12 @@
             <div class="inner-title">
                 <ul>
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="{{ url('/') }}">Beranda</a>
                     </li>
                     <li><i class='bx bx-chevron-right'></i></li>
-                    <li>Contact</li>
+                    <li>Kontak</li>
                 </ul>
-                <h3>Contact</h3>
+                <h3>Kontak</h3>
             </div>
         </div>
     </div>
@@ -25,7 +25,7 @@
                 <div class="col-lg-6">
                     <div class="contact-content">
                         <div class="section-title">
-                            <h2>Let's Start to Give Us a Message and Contact With Us</h2>
+                            <h2>Kontak Kami</h2>
                         </div>
                         <div class="contact-img">
                             <img src="{{ asset('frontend/assets/img/contact/contact-img1.jpg') }}" alt="Images">
@@ -38,10 +38,10 @@
                         <form method="POST" action="{{ route('store.contact') }}">
                             @csrf
                             <div class="row">
-                                <div class="col-lg-6 col-sm-6">
+                                <div class="col-lg-12 col-sm-12">
                                     <div class="form-group">
                                         <input type="text" name="name" id="name" class="form-control" required
-                                            data-error="Please enter your name" placeholder="Name">
+                                            data-error="Please enter your name" placeholder="Nama Lengkap">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -49,7 +49,7 @@
                                 <div class="col-lg-6 col-sm-6">
                                     <div class="form-group">
                                         <input type="email" name="email" id="email" class="form-control" required
-                                            data-error="Please enter your email" placeholder="Email">
+                                            data-error="Please enter your email" placeholder="Alamat Email">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -57,15 +57,15 @@
                                 <div class="col-lg-6 col-sm-6">
                                     <div class="form-group">
                                         <input type="text" name="phone" id="phone_number" required
-                                            data-error="Please enter your number" class="form-control" placeholder="Phone">
+                                            data-error="Please enter your number" class="form-control" placeholder="No Hp">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6 col-sm-6">
+                                <div class="col-lg-12 col-sm-12">
                                     <div class="form-group">
                                         <input type="text" name="subject" id="msg_subject" class="form-control" required
-                                            data-error="Please enter your subject" placeholder="Your Subject">
+                                            data-error="Please enter your subject" placeholder="Subjek">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -73,26 +73,16 @@
                                 <div class="col-lg-12 col-md-12">
                                     <div class="form-group">
                                         <textarea name="message" class="form-control" id="message" cols="30" rows="8" required
-                                            data-error="Write your message" placeholder="Your Message"></textarea>
+                                            data-error="Write your message" placeholder="Pesan"></textarea>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
 
-                                {{-- <div class="col-lg-12 col-md-12">
-                                    <div class="form-group checkbox-option">
-                                        <input type="checkbox" id="chb2">
-                                        <p>
-                                            Accept <a href="terms-condition.html">Terms & Conditions</a> And <a
-                                                href="privacy-policy.html">Privacy Policy.</a>
-                                        </p>
-                                    </div>
-                                </div> --}}
-
                                 <div class="col-lg-12 col-md-12">
                                     <button type="submit" class="default-btn btn-bg-three">
-                                        Send Message
+                                        Kirim Pesan
                                     </button>
-                                    {{-- <div id="msgSubmit" class="h3 text-center hidden"></div> --}}
+                                    <div id="msgSubmit" class="h3 text-center hidden"></div>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
@@ -115,38 +105,33 @@
                 <div class="col-lg-6">
                     <div class="contact-another-content">
                         <div class="section-title">
-                            <h2>Contacts Info</h2>
-                            <p>
-                                We are one of the best agency and we can easily make a contract
-                                us anytime on the below details.
-                            </p>
+                            <h2>Informasi Kontak</h2>
                         </div>
 
                         <div class="contact-item">
                             <ul>
+                                <br>
                                 <li>
                                     <i class='bx bx-home-alt'></i>
                                     <div class="content">
                                         <span>{{ $setting->address }}</span>
-                                        {{-- <span>{{ $setting->address }}</span> --}}
                                     </div>
                                 </li>
+                                <br>
                                 <li>
                                     <i class='bx bx-phone-call'></i>
                                     <div class="content">
                                         <span><a href="tel:{{ $setting->phone }}">{{ $setting->phone }}</a></span>
-                                        <br>
-                                        {{-- <span><a href="tel:{{ $setting->phone }}">{{ $setting->phone }}</a></span> --}}
                                     </div>
                                 </li>
+                                <br>
                                 <li>
                                     <i class='bx bx-envelope'></i>
                                     <div class="content">
                                         <span><a href="{{ $setting->email }}">{{ $setting->email }}</a></span>
-                                        <br>
-                                        {{-- <span><a href="{{ $setting->email }}">{{ $setting->email }}</a></span> --}}
                                     </div>
                                 </li>
+                                <br>
                             </ul>
                         </div>
                     </div>

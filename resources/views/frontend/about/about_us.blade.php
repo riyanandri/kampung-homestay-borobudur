@@ -57,19 +57,6 @@
 
                                     <div class="col-lg-4 col-md-4">
                                         <div class="form-group">
-                                            <label>Persons</label>
-                                            <select class="form-control">
-                                                <option>01</option>
-                                                <option>02</option>
-                                                <option>03</option>
-                                                <option>04</option>
-                                                <option>05</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-md-4">
-                                        <div class="form-group">
                                             <label>Check Out</label>
                                             <div class="input-group">
                                                 <input id="datetimepicker-check" type="text" class="form-control"
@@ -80,9 +67,21 @@
                                         </div>
                                     </div>
 
+                                    <div class="col-lg-4 col-md-4">
+                                        <div class="form-group">
+                                            <label>Tamu</label>
+                                            <select class="form-control">
+                                                <option>01</option>
+                                                <option>02</option>
+                                                <option>03</option>
+                                                <option>04</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
                                     <div class="col-lg-12 col-md-12">
                                         <button type="submit" class="default-btn btn-bg-three border-radius-5">
-                                            Check Availability
+                                            Check Ketersediaan
                                         </button>
                                     </div>
                                 </div>
