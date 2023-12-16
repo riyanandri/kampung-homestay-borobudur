@@ -14,10 +14,12 @@
                 </nav>
             </div>
             <div class="ms-auto">
-                <div class="btn-group">
-                    <a href="{{ route('add.room.type') }}" class="btn btn-primary px-5">Add Room
-                        Type</a>
-                </div>
+                @if (Auth::user()->can('room.type.add'))
+                    <div class="btn-group">
+                        <a href="{{ route('add.room.type') }}" class="btn btn-primary px-5">Add Room
+                            Type</a>
+                    </div>
+                @endif
             </div>
         </div>
         <!--end breadcrumb-->
@@ -49,10 +51,14 @@
                                     <td>{{ $item->name }}</td>
                                     <td>
                                         @foreach ($rooms as $roo)
-                                            <a href="{{ route('edit.room', $roo->id) }}"
-                                                class="btn btn-warning px-3 radius-30">Edit</a>
-                                            <a href="{{ route('delete.room', $roo->id) }}"
-                                                class="btn btn-danger px-3 radius-30" id="delete">Delete</a>
+                                            @if (Auth::user()->can('room.type.edit'))
+                                                <a href="{{ route('edit.room', $roo->id) }}"
+                                                    class="btn btn-warning px-3 radius-30">Edit</a>
+                                            @endif
+                                            @if (Auth::user()->can('room.type.delete'))
+                                                <a href="{{ route('delete.room', $roo->id) }}"
+                                                    class="btn btn-danger px-3 radius-30" id="delete">Delete</a>
+                                            @endif
                                         @endforeach
                                     </td>
                                 </tr>
