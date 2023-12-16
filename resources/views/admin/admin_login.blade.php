@@ -52,13 +52,14 @@
                                     </div>
                                     <div class="text-center mb-4">
                                         <h5 class="">Kampung Homestay Admin</h5>
-                                        <p class="mb-0">Please log in to your account</p>
+                                        <p class="mb-0">Masuk ke akun anda</p>
                                     </div>
                                     <div class="form-body">
                                         <form class="row g-3" method="POST" action="{{ route('login') }}">
                                             @csrf
                                             <div class="col-12">
-                                                <label for="inputEmailAddress" class="form-label">Email or Phone</label>
+                                                <label for="inputEmailAddress" class="form-label">Email atau No
+                                                    HP</label>
                                                 <input type="text"
                                                     class="form-control @error('login') is-invalid @enderror"
                                                     name="login" id="login"
@@ -68,11 +69,12 @@
                                                 @enderror
                                             </div>
                                             <div class="col-12">
-                                                <label for="inputChoosePassword" class="form-label">Password</label>
+                                                <label for="inputChoosePassword" class="form-label">Kata Sandi</label>
                                                 <div class="input-group" id="show_hide_password">
                                                     <input type="password" class="form-control border-end-0"
-                                                        name="password" id="password" placeholder="Enter Password"> <a
-                                                        href="javascript:;" class="input-group-text bg-transparent"><i
+                                                        name="password" id="password"
+                                                        placeholder="Masukkan Kata Sandi"> <a href="javascript:;"
+                                                        class="input-group-text bg-transparent"><i
                                                             class="bx bx-hide"></i></a>
                                                 </div>
                                             </div>
@@ -80,45 +82,20 @@
                                                 <div class="form-check form-switch">
                                                     <input class="form-check-input" type="checkbox"
                                                         id="flexSwitchCheckChecked">
-                                                    <label class="form-check-label"
-                                                        for="flexSwitchCheckChecked">Remember Me</label>
+                                                    <label class="form-check-label" for="flexSwitchCheckChecked">Ingat
+                                                        Saya</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 text-end"> <a
-                                                    href="authentication-forgot-password.html">Forgot Password ?</a>
+                                                    href="authentication-forgot-password.html">Lupa Katasandi?</a>
                                             </div>
                                             <div class="col-12">
                                                 <div class="d-grid">
-                                                    <button type="submit" class="btn btn-primary">Sign in</button>
+                                                    <button type="submit" class="btn btn-primary">Masuk</button>
                                                 </div>
                                             </div>
-                                            {{-- <div class="col-12">
-                                                <div class="text-center ">
-                                                    <p class="mb-0">Don't have an account yet? <a
-                                                            href="authentication-signup.html">Sign up here</a>
-                                                    </p>
-                                                </div>
-                                            </div> --}}
                                         </form>
                                     </div>
-                                    {{-- <div class="login-separater text-center mb-5"> <span>OR SIGN IN WITH</span>
-                                        <hr>
-                                    </div>
-                                    <div class="list-inline contacts-social text-center">
-                                        <a href="javascript:;"
-                                            class="list-inline-item bg-facebook text-white border-0 rounded-3"><i
-                                                class="bx bxl-facebook"></i></a>
-                                        <a href="javascript:;"
-                                            class="list-inline-item bg-twitter text-white border-0 rounded-3"><i
-                                                class="bx bxl-twitter"></i></a>
-                                        <a href="javascript:;"
-                                            class="list-inline-item bg-google text-white border-0 rounded-3"><i
-                                                class="bx bxl-google"></i></a>
-                                        <a href="javascript:;"
-                                            class="list-inline-item bg-linkedin text-white border-0 rounded-3"><i
-                                                class="bx bxl-linkedin"></i></a>
-                                    </div> --}}
-
                                 </div>
                             </div>
                         </div>
