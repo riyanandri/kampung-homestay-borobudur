@@ -47,6 +47,9 @@
                                             <option value="Manage Room"
                                                 {{ $permission->group_name == 'Manage Room' ? 'selected' : '' }}>Manage Room
                                             </option>
+                                            <option value="Blog"
+                                                {{ $permission->group_name == 'Blog' ? 'selected' : '' }}>Blog
+                                            </option>
                                             <option value="Booking"
                                                 {{ $permission->group_name == 'Booking' ? 'selected' : '' }}>Booking
                                             </option>

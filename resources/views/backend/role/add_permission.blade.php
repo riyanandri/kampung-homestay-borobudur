@@ -38,6 +38,7 @@
                                             <option value="Owner">Owner</option>
                                             <option value="Book Area">Book Area</option>
                                             <option value="Manage Room">Manage Room</option>
+                                            <option value="Blog">Blog</option>
                                             <option value="Booking">Booking</option>
                                             <option value="RoomList">RoomList</option>
                                             <option value="Setting">Setting</option>

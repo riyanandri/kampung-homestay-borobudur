@@ -69,6 +69,20 @@
                 </ul>
             </li>
         @endif
+        @if (Auth::user()->can('blog.menu'))
+            <li>
+                <a class="has-arrow" href="javascript:;">
+                    <div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
+                    </div>
+                    <div class="menu-title">Blog</div>
+                </a>
+                <ul>
+                    <li> <a href="{{ route('blog.category') }}"><i class='bx bx-radio-circle'></i>Blog Kategori</a>
+                    </li>
+                    <li> <a href="{{ route('all.blog.post') }}"><i class='bx bx-radio-circle'></i>Artikel Blog</a>
+                </ul>
+            </li>
+        @endif
         <li class="menu-label">Kelola Pesanan</li>
         @if (Auth::user()->can('booking.menu'))
             <li>
@@ -130,18 +144,6 @@
                 </ul>
             </li>
         @endif
-        <li>
-            <a class="has-arrow" href="javascript:;">
-                <div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
-                </div>
-                <div class="menu-title">Blog</div>
-            </a>
-            <ul>
-                <li> <a href="{{ route('blog.category') }}"><i class='bx bx-radio-circle'></i>Blog Kategori</a>
-                </li>
-                <li> <a href="{{ route('all.blog.post') }}"><i class='bx bx-radio-circle'></i>Artikel Blog</a>
-            </ul>
-        </li>
         <li class="menu-label">Lain-Lain</li>
         @if (Auth::user()->can('setting.menu'))
             <li>
