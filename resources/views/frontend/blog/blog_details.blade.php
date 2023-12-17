@@ -49,7 +49,7 @@
                             </p>
                         </div>
 
-                        <div class="comments-wrap">
+                        {{-- <div class="comments-wrap">
                             <h3 class="title">Comments</h3>
                             <ul>
                                 <li>
@@ -117,20 +117,20 @@
                                     </div>
                                 </form>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
 
                 <div class="col-lg-4">
                     <div class="side-bar-wrap">
-                        <div class="search-widget">
+                        {{-- <div class="search-widget">
                             <form class="search-form">
                                 <input type="search" class="form-control" placeholder="Search...">
                                 <button type="submit">
                                     <i class="bx bx-search"></i>
                                 </button>
                             </form>
-                        </div>
+                        </div> --}}
 
                         <div class="services-bar-widget">
                             <h3 class="title">Blog Category</h3>

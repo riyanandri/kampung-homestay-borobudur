@@ -193,7 +193,7 @@ class BlogController extends Controller
 
     public function blogCatList($id)
     {
-        $blog = BlogPost::where('blogcat_id',$id)->get();
+        $blog = BlogPost::where('blogcat_id',$id)->paginate(1);
         $namecat = BlogCategory::where('id',$id)->first();
         $bcategory = BlogCategory::latest()->get();
         $lpost = BlogPost::latest()->limit(3)->get();
@@ -203,7 +203,7 @@ class BlogController extends Controller
 
     public function blogList()
     {
-        $blog = BlogPost::latest()->get();
+        $blog = BlogPost::latest()->paginate(3);
         $bcategory = BlogCategory::latest()->get();
         $lpost = BlogPost::latest()->limit(3)->get();
 
