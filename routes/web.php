@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AboutUsController;
+use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\OwnerController;
 use App\Http\Controllers\Backend\ReportController;
@@ -155,6 +156,14 @@ Route::middleware(['auth','roles:admin'])->group(function(){
 
     Route::controller(ContactController::class)->group(function(){
         Route::get('/contact/message', 'adminContactMessage')->name('contact.message');
+    });
+
+    Route::controller(BlogController::class)->group(function(){
+        Route::get('/blog/category', 'blogCategory')->name('blog.category');
+        Route::post('/store/blog/category', 'storeBlogCategory')->name('store.blog.category');
+        Route::get('/edit/blog/category/{id}', 'editBlogCategory');
+        Route::post('/update/blog/category', 'updateBlogCategory')->name('update.blog.category');
+        Route::get('/delete/blog/category/{id}', 'deleteBlogCategory')->name('delete.blog.category');
     });
 
     Route::controller(AdminController::class)->group(function(){

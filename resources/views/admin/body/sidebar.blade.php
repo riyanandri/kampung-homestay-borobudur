@@ -61,7 +61,7 @@
                     <div class="menu-title">Kelola Tipe Kamar</div>
                 </a>
                 <ul>
-                    @if (Auth::user()->can('room.type.list'))
+                    @if (Auth::user()->can('room.type'))
                         <li> <a href="{{ route('room.type.list') }}"><i class='bx bx-radio-circle'></i>Daftar Tipe
                                 Kamar</a>
                         </li>
@@ -130,6 +130,17 @@
                 </ul>
             </li>
         @endif
+        <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
+                </div>
+                <div class="menu-title">Blog</div>
+            </a>
+            <ul>
+                <li> <a href="{{ route('blog.category') }}"><i class='bx bx-radio-circle'></i>Blog Kategori</a>
+                </li>
+            </ul>
+        </li>
         <li class="menu-label">Lain-Lain</li>
         @if (Auth::user()->can('setting.menu'))
             <li>
@@ -161,27 +172,28 @@
                     <li> <a href="{{ route('add.roles.permission') }}"><i class='bx bx-radio-circle'></i>Peran & Hak
                             Akses</a>
                     </li>
-                    <li> <a href="{{ route('all.roles.permission') }}"><i class='bx bx-radio-circle'></i>Daftar Peran &
+                    <li> <a href="{{ route('all.roles.permission') }}"><i class='bx bx-radio-circle'></i>Daftar Peran
+                            &
                             Hak Akses</a>
                     </li>
                 </ul>
             </li>
         @endif
-        @if (Auth::user()->can('manage.admin.menu'))
-            <li>
-                <a class="has-arrow" href="javascript:;">
-                    <div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
-                    </div>
-                    <div class="menu-title">Kelola Admin</div>
-                </a>
-                <ul>
-                    <li> <a href="{{ route('all.admin') }}"><i class='bx bx-radio-circle'></i>Daftar Admin</a>
-                    </li>
-                    <li> <a href="{{ route('add.admin') }}"><i class='bx bx-radio-circle'></i>Tambah Admin</a>
-                    </li>
-                </ul>
-            </li>
-        @endif
+        {{-- @if (Auth::user()->can('manage.admin.menu')) --}}
+        <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
+                </div>
+                <div class="menu-title">Kelola Admin</div>
+            </a>
+            <ul>
+                <li> <a href="{{ route('all.admin') }}"><i class='bx bx-radio-circle'></i>Daftar Admin</a>
+                </li>
+                <li> <a href="{{ route('add.admin') }}"><i class='bx bx-radio-circle'></i>Tambah Admin</a>
+                </li>
+            </ul>
+        </li>
+        {{-- @endif --}}
     </ul>
     <!--end navigation-->
 </div>
