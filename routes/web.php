@@ -197,6 +197,10 @@ Route::controller(ContactController::class)->group(function(){
     Route::post('/store/contact', 'StoreContactUs')->name('store.contact');
 });
 
+Route::controller(BlogController::class)->group(function(){
+    Route::get('/blog/details/{slug}', 'blogDetails');
+});
+
 Route::controller(AboutUsController::class)->group(function(){
     Route::get('/about-us', 'aboutUs')->name('about.us');
 });
