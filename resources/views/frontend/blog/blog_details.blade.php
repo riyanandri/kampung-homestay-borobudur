@@ -38,7 +38,7 @@
 
                                 <li>
                                     <i class='bx bx-calendar'></i>
-                                    {{ $blog->created_at->format('M d Y') }}
+                                    {{ \Carbon\Carbon::parse($blog->created_at)->translatedFormat('l, d F Y') }}
                                 </li>
                             </ul>
                         </div>
@@ -133,7 +133,7 @@
                         </div> --}}
 
                         <div class="services-bar-widget">
-                            <h3 class="title">Blog Category</h3>
+                            <h3 class="title">Kategori</h3>
                             <div class="side-bar-categories">
                                 @foreach ($bcategory as $cat)
                                     <ul>
@@ -146,28 +146,28 @@
                         </div>
 
                         <div class="side-bar-widget">
-                            <h3 class="title">Recent Posts</h3>
+                            <h3 class="title">Unggahan Terbaru</h3>
                             <div class="widget-popular-post">
                                 @foreach ($lpost as $post)
                                     <article class="item">
-                                        <a href="blog-details.html" class="thumb">
+                                        <a href="{{ url('blog/details/' . $blog->post_slug) }}" class="thumb">
                                             <img src="{{ asset($post->post_image) }}" alt="Images"
                                                 style="width: 80px; height:80px;">
                                         </a>
                                         <div class="info">
                                             <h4 class="title-text">
-                                                <a href="blog-details.html">
+                                                <a href="{{ url('blog/details/' . $blog->post_slug) }}">
                                                     {{ $post->post_title }}
                                                 </a>
                                             </h4>
                                             <ul>
                                                 <li>
                                                     <i class='bx bx-user'></i>
-                                                    29K
+                                                    {{ $blog['user']['name'] }}
                                                 </li>
                                                 <li>
-                                                    <i class='bx bx-message-square-detail'></i>
-                                                    15K
+                                                    <i class='bx bx-calendar'></i>
+                                                    {{ \Carbon\Carbon::parse($blog->created_at)->diffForHumans() }}
                                                 </li>
                                             </ul>
                                         </div>

@@ -18,16 +18,15 @@
                         </a>
                         <div class="content">
                             <ul>
-                                <li>{{ $item->created_at->format('M d Y') }}</li>
-                                <li><i class='bx bx-user'></i>29K</li>
-                                <li><i class='bx bx-message-alt-dots'></i>15K</li>
+                                <li>{{ \Carbon\Carbon::parse($item->created_at)->diffForHumans() }}</li>
+                                <li><i class='bx bx-user'></i>{{ $item['user']['name'] }}</li>
                             </ul>
                             <h3>
                                 <a href="{{ url('blog/details/' . $item->post_slug) }}">{{ $item->post_title }}</a>
                             </h3>
                             <p>{{ $item->short_desc }}</p>
                             <a href="{{ url('blog/details/' . $item->post_slug) }}" class="read-btn">
-                                Read More
+                                Selengkapnya
                             </a>
                         </div>
                     </div>

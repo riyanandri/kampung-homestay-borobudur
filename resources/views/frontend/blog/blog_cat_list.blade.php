@@ -37,14 +37,14 @@
 
                                     <div class="col-lg-7 col-md-8 p-0">
                                         <div class="blog-content">
-                                            <span>{{ $item->created_at->format('M d Y') }}</span>
+                                            <span>{{ \Carbon\Carbon::parse($item->created_at)->translatedFormat('l, d F Y') }}</span>
                                             <h3>
                                                 <a
                                                     href="{{ url('blog/details/' . $item->post_slug) }}">{{ $item->post_title }}</a>
                                             </h3>
                                             <p>{{ $item->short_desc }}</p>
                                             <a href="{{ url('blog/details/' . $item->post_slug) }}" class="read-btn">
-                                                Read More
+                                                Baca Selengkapnya
                                             </a>
                                         </div>
                                     </div>
@@ -83,28 +83,28 @@
                             </div>
                         </div>
                         <div class="side-bar-widget">
-                            <h3 class="title">Recent Posts</h3>
+                            <h3 class="title">Unggahan Terbaru</h3>
                             <div class="widget-popular-post">
                                 @foreach ($lpost as $post)
                                     <article class="item">
-                                        <a href="blog-details.html" class="thumb">
+                                        <a href="{{ url('blog/details/' . $post->post_slug) }}" class="thumb">
                                             <img src="{{ asset($post->post_image) }}" alt="Images"
                                                 style="width: 80px; height:80px;">
                                         </a>
                                         <div class="info">
                                             <h4 class="title-text">
-                                                <a href="blog-details.html">
+                                                <a href="{{ url('blog/details/' . $post->post_slug) }}">
                                                     {{ $post->post_title }}
                                                 </a>
                                             </h4>
                                             <ul>
                                                 <li>
                                                     <i class='bx bx-user'></i>
-                                                    29K
+                                                    {{ $post['user']['name'] }}
                                                 </li>
                                                 <li>
-                                                    <i class='bx bx-message-square-detail'></i>
-                                                    15K
+                                                    <i class='bx bx-calendar'></i>
+                                                    {{ \Carbon\Carbon::parse($post->created_at)->diffForHumans() }}
                                                 </li>
                                             </ul>
                                         </div>
