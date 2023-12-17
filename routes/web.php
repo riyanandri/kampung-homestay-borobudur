@@ -199,6 +199,8 @@ Route::controller(ContactController::class)->group(function(){
 
 Route::controller(BlogController::class)->group(function(){
     Route::get('/blog/details/{slug}', 'blogDetails');
+    Route::get('/blog/cat/list/{id}', 'blogCatList');
+    Route::get('/blog', 'blogList')->name('blog.list');
 });
 
 Route::controller(AboutUsController::class)->group(function(){

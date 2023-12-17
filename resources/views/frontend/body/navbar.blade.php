@@ -48,6 +48,12 @@
                         </li>
 
                         <li class="nav-item">
+                            <a href="{{ route('blog.list') }}" class="nav-link">
+                                Blog
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
                             <a href="{{ route('about.us') }}" class="nav-link">
                                 Tentang Kami
                             </a>
