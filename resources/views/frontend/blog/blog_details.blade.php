@@ -2,7 +2,7 @@
 
 @section('main')
     <!-- Inner Banner -->
-    <div class="inner-banner inner-bg3">
+    <div class="inner-banner inner-bg-blog-detail">
         <div class="container">
             <div class="inner-title">
                 <ul>

@@ -2,7 +2,7 @@
 
 @section('main')
     <!-- Inner Banner -->
-    <div class="inner-banner inner-bg2">
+    <div class="inner-banner inner-bg-contact">
         <div class="container">
             <div class="inner-title">
                 <ul>
@@ -25,10 +25,10 @@
                 <div class="col-lg-6">
                     <div class="contact-content">
                         <div class="section-title">
-                            <h2>Kontak Kami</h2>
+                            <h2>Kirim Pesan</h2>
                         </div>
                         <div class="contact-img">
-                            <img src="{{ asset('frontend/assets/img/contact/contact-img1.jpg') }}" alt="Images">
+                            <img src="{{ asset('frontend/assets/img/livechat.gif') }}" alt="Images">
                         </div>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                 <div class="col-lg-6">
                     <div class="contact-another-content">
                         <div class="section-title">
-                            <h2>Informasi Kontak</h2>
+                            <h2>Kontak Kami</h2>
                         </div>
 
                         <div class="contact-item">
@@ -140,7 +140,7 @@
 
                 <div class="col-lg-6">
                     <div class="contact-another-img">
-                        <img src="{{ asset('frontend/assets/img/contact/contact-img2.jpg') }}" alt="Images">
+                        <img src="{{ asset('frontend/assets/img/contact/kontak-informasi.png') }}" alt="Images">
                     </div>
                 </div>
             </div>

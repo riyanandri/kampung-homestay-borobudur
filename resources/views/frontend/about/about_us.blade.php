@@ -2,7 +2,7 @@
 
 @section('main')
     <!-- Inner Banner -->
-    <div class="inner-banner inner-bg1">
+    <div class="inner-banner inner-bg-about-us">
         <div class="container">
             <div class="inner-title">
                 <ul>
@@ -24,7 +24,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="about-img">
-                        <img src="assets/img/about/about-img3.jpg" alt="Images">
+                        <img src="{{ asset('frontend/assets/img/about/tentang-kami.png') }}" alt="Images">
                     </div>
                 </div>
 

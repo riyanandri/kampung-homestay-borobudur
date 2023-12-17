@@ -2,15 +2,15 @@
 
 @section('main')
     <!-- Inner Banner -->
-    <div class="inner-banner inner-bg10">
+    <div class="inner-banner inner-bg-room-detail">
         <div class="container">
             <div class="inner-title">
                 <ul>
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="{{ url('/') }}">Beranda</a>
                     </li>
                     <li><i class='bx bx-chevron-right'></i></li>
-                    <li>Room Details </li>
+                    <li>Detail Kamar</li>
                 </ul>
                 <h3>{{ $roomDetails->roomType->name }}</h3>
             </div>
@@ -25,7 +25,7 @@
                 <div class="col-lg-4">
                     <div class="room-details-side">
                         <div class="side-bar-form">
-                            <h3>Booking Sheet </h3>
+                            <h3>Detail Pesanan</h3>
                             <form>
                                 <div class="row align-items-center">
                                     <div class="col-lg-12">
@@ -54,7 +54,7 @@
 
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label>Numbers of Persons</label>
+                                            <label>Jumlah Tamu</label>
                                             <select class="form-control">
                                                 <option>01</option>
                                                 <option>02</option>
@@ -67,7 +67,7 @@
 
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label>Numbers of Rooms</label>
+                                            <label>Jumlah Kamar</label>
                                             <select class="form-control">
                                                 <option>01</option>
                                                 <option>02</option>
@@ -80,14 +80,12 @@
 
                                     <div class="col-lg-12 col-md-12">
                                         <button type="submit" class="default-btn btn-bg-three border-radius-5">
-                                            Book Now
+                                            Pesan Sekarang
                                         </button>
                                     </div>
                                 </div>
                             </form>
                         </div>
-
-
                     </div>
                 </div>
 
@@ -101,18 +99,12 @@
                             @endforeach
                         </div>
 
-
-
-
-
                         <div class="room-details-title">
                             <h2>{{ $roomDetails->roomType->name }}</h2>
                             <ul>
-
                                 <li>
-                                    <b> Basic : Rp. {{ $roomDetails->price }}/Night/Room</b>
+                                    <b> Harga : Rp. {{ $roomDetails->price }}/Malam</b>
                                 </li>
-
                             </ul>
                         </div>
 
@@ -120,58 +112,37 @@
                             <p>
                                 {!! $roomDetails->description !!}
                             </p>
-
-
                             <div class="side-bar-plan">
-                                <h3>Basic Plan Facilities</h3>
+                                <h3>Fasilitas</h3>
                                 <ul>
                                     @foreach ($facility as $fac)
                                         <li><a href="#">{{ $fac->facility_name }}</a></li>
                                     @endforeach
                                 </ul>
-
-
                             </div>
-
-
-
-
-
-
 
                             <div class="row">
                                 <div class="col-lg-6">
-
-
-
                                     <div class="services-bar-widget">
-                                        <h3 class="title">Room Details</h3>
+                                        <h3 class="title">Detail Kamar</h3>
                                         <div class="side-bar-list">
                                             <ul>
                                                 <li>
-                                                    <a href="#"> <b>Capacity : </b> {{ $roomDetails->room_capacity }}
-                                                        Person <i class='bx bxs-cloud-download'></i></a>
+                                                    <a href="#"> <b>Kapasitas : </b> {{ $roomDetails->room_capacity }}
+                                                        Orang<i class='bx bxs-cloud-download'></i></a>
                                                 </li>
                                                 <li>
-                                                    <a href="#"> <b>Size : </b> {{ $roomDetails->size }} ft2 <i
+                                                    <a href="#"> <b>Ukuran : </b> {{ $roomDetails->size }} ft2<i
                                                             class='bx bxs-cloud-download'></i></a>
                                                 </li>
-
-
                                             </ul>
                                         </div>
                                     </div>
-
-
-
-
                                 </div>
-
-
 
                                 <div class="col-lg-6">
                                     <div class="services-bar-widget">
-                                        <h3 class="title">Room Details</h3>
+                                        <h3 class="title">Detail Kamar</h3>
                                         <div class="side-bar-list">
                                             <ul>
                                                 <li>
@@ -179,22 +150,17 @@
                                                             class='bx bxs-cloud-download'></i></a>
                                                 </li>
                                                 <li>
-                                                    <a href="#"> <b>Bad Style : </b> {{ $roomDetails->bed_style }} <i
+                                                    <a href="#"> <b>Bed Style : </b> {{ $roomDetails->bed_style }} <i
                                                             class='bx bxs-cloud-download'></i></a>
                                                 </li>
-
                                             </ul>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
-
-
-
                         </div>
 
-                        <div class="room-details-review">
+                        {{-- <div class="room-details-review">
                             <h2>Clients Review and Retting's</h2>
                             <div class="review-ratting">
                                 <h3>Your retting: </h3>
@@ -220,7 +186,7 @@
                                     </div>
                                 </div>
                             </form>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -232,7 +198,7 @@
     <div class="room-details-other pb-70">
         <div class="container">
             <div class="room-details-text">
-                <h2>Other Rooms</h2>
+                <h2>Kamar Lainnya</h2>
             </div>
 
             <div class="row ">
@@ -254,17 +220,10 @@
                                             <a
                                                 href="{{ url('room/details/' . $item->id) }}">{{ $item['roomType']['name'] }}</a>
                                         </h3>
-                                        <span>Rp. {{ $item->price }} / Per Night </span>
-                                        <div class="rating">
-                                            <i class='bx bxs-star'></i>
-                                            <i class='bx bxs-star'></i>
-                                            <i class='bx bxs-star'></i>
-                                            <i class='bx bxs-star'></i>
-                                            <i class='bx bxs-star'></i>
-                                        </div>
+                                        <span>Rp. {{ $item->price }} /Malam</span>
                                         <p>{{ $item->short_desc }}</p>
                                         <ul>
-                                            <li><i class='bx bx-user'></i> {{ $item->room_capacity }} Person</li>
+                                            <li><i class='bx bx-user'></i> {{ $item->room_capacity }} Orang</li>
                                             <li><i class='bx bx-expand'></i> {{ $item->size }} ft2</li>
                                         </ul>
 
@@ -274,7 +233,7 @@
                                         </ul>
 
                                         <a href="room-details.html" class="book-more-btn">
-                                            Book Now
+                                            Pesan Sekarang
                                         </a>
                                     </div>
                                 </div>
@@ -282,7 +241,6 @@
                         </div>
                     </div>
                 @endforeach
-
             </div>
         </div>
     </div>
