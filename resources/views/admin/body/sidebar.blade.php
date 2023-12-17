@@ -139,6 +139,7 @@
             <ul>
                 <li> <a href="{{ route('blog.category') }}"><i class='bx bx-radio-circle'></i>Blog Kategori</a>
                 </li>
+                <li> <a href="{{ route('all.blog.post') }}"><i class='bx bx-radio-circle'></i>Artikel Blog</a>
             </ul>
         </li>
         <li class="menu-label">Lain-Lain</li>
