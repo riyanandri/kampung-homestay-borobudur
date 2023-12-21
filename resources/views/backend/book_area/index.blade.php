@@ -6,13 +6,13 @@
     <div class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-            <div class="breadcrumb-title pe-3">Book Area</div>
+            <div class="breadcrumb-title pe-3">Promo</div>
             <div class="ps-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Update Book Area</li>
+                        <li class="breadcrumb-item active" aria-current="page">Perbarui Promo</li>
                     </ol>
                 </nav>
             </div>
@@ -30,7 +30,7 @@
                                 <div class="card-body">
                                     <div class="row mb-3">
                                         <div class="col-sm-3">
-                                            <h6 class="mb-0">Subtitel</h6>
+                                            <h6 class="mb-0">Subjudul</h6>
                                         </div>
                                         <div class="form-group col-sm-9 text-secondary">
                                             <input type="text" class="form-control" name="short_title"
@@ -39,7 +39,7 @@
                                     </div>
                                     <div class="row mb-3">
                                         <div class="col-sm-3">
-                                            <h6 class="mb-0">Titel</h6>
+                                            <h6 class="mb-0">Judul</h6>
                                         </div>
                                         <div class="form-group col-sm-9 text-secondary">
                                             <input type="text" name="main_title" class="form-control"
@@ -56,7 +56,7 @@
                                     </div>
                                     <div class="row mb-3">
                                         <div class="col-sm-3">
-                                            <h6 class="mb-0">Link Url</h6>
+                                            <h6 class="mb-0">Link</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
                                             <input type="text" name="link_url" class="form-control"
@@ -83,7 +83,7 @@
                                     <div class="row">
                                         <div class="col-sm-3"></div>
                                         <div class="col-sm-9 text-secondary">
-                                            <input type="submit" class="btn btn-primary px-4" value="Save Changes" />
+                                            <input type="submit" class="btn btn-primary px-4" value="Simpan Perubahan" />
                                         </div>
                                     </div>
                                 </div>

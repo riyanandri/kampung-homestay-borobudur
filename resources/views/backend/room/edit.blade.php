@@ -17,7 +17,7 @@
                                         <div class="d-flex align-items-center">
                                             <div class="tab-icon"><i class="bx bx-home font-18 me-1"></i>
                                             </div>
-                                            <div class="tab-title">Manage Room</div>
+                                            <div class="tab-title">Kelola Kamar</div>
                                         </div>
                                     </a>
                                 </li>
@@ -27,7 +27,7 @@
                                         <div class="d-flex align-items-center">
                                             <div class="tab-icon"><i class="bx bx-user-pin font-18 me-1"></i>
                                             </div>
-                                            <div class="tab-title">Room Number</div>
+                                            <div class="tab-title">Daftar Kamar</div>
                                         </div>
                                     </a>
                                 </li>
@@ -37,27 +37,29 @@
                                     <div class="col-xl-12 mx-auto">
                                         <div class="card">
                                             <div class="card-body p-4">
-                                                <h5 class="mb-4">Update Room</h5>
+                                                <h5 class="mb-4">Perbarui Kamar</h5>
                                                 <form class="row g-3" action="{{ route('update.room', $editData->id) }}"
                                                     method="POST" enctype="multipart/form-data">
                                                     @csrf
                                                     <div class="col-md-4">
-                                                        <label for="input1" class="form-label">Room Type Name</label>
+                                                        <label for="input1" class="form-label">Nama Tipe Kamar</label>
                                                         <input type="text" class="form-control" name="room_type_id"
                                                             id="input1" value="{{ $editData['roomType']['name'] }}">
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <label for="input2" class="form-label">Total Adult</label>
+                                                        <label for="input2" class="form-label">Pengunjung
+                                                            Dewasa (Max)</label>
                                                         <input type="text" class="form-control" name="total_adult"
                                                             id="input2" value="{{ $editData->total_adult }}">
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <label for="input2" class="form-label">Total Child</label>
+                                                        <label for="input2" class="form-label">Pengunjung Anak
+                                                            Kecil (Max)</label>
                                                         <input type="text" class="form-control" name="total_child"
                                                             id="input2" value="{{ $editData->total_child }}">
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label for="input4" class="form-label">Main Image</label>
+                                                        <label for="input4" class="form-label">Gambar Utama</label>
                                                         <input type="file" class="form-control" name="image"
                                                             id="image">
                                                         <img id="showImage"
@@ -65,7 +67,7 @@
                                                             alt="room" class="bg-primary" width="60">
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label for="input3" class="form-label">Galery Image</label>
+                                                        <label for="input3" class="form-label">Galeri</label>
                                                         <input type="file" class="form-control" name="multi_img[]"
                                                             id="multiImg"
                                                             accept="image/jpeg, image/jpg, image/gif, image/png" multiple>
@@ -79,58 +81,71 @@
                                                         <div class="row" id="preview_img"></div>
                                                     </div>
                                                     <div class="col-md-3">
-                                                        <label for="input1" class="form-label">Room Price</label>
+                                                        <label for="input1" class="form-label">Harga Kamar</label>
                                                         <input type="text" class="form-control" name="price"
                                                             id="input1" value="{{ $editData->price }}">
                                                     </div>
                                                     <div class="col-md-3">
-                                                        <label for="input1" class="form-label">Size</label>
+                                                        <label for="input1" class="form-label">Ukuran</label>
                                                         <input type="text" class="form-control" name="size"
                                                             id="input1" value="{{ $editData->size }}">
                                                     </div>
                                                     <div class="col-md-3">
-                                                        <label for="input2" class="form-label">Discount (%)</label>
+                                                        <label for="input2" class="form-label">Diskon (%)</label>
                                                         <input type="text" class="form-control" name="discount"
                                                             id="input2" value="{{ $editData->discount }}">
                                                     </div>
                                                     <div class="col-md-3">
-                                                        <label for="input2" class="form-label">Room Capacity</label>
+                                                        <label for="input2" class="form-label">Kapasitas Kamar
+                                                            (Max)</label>
                                                         <input type="text" class="form-control" name="room_capacity"
                                                             id="input2" value="{{ $editData->room_capacity }}">
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label for="input7" class="form-label">Room View</label>
+                                                        <label for="input7" class="form-label">Wisata</label>
                                                         <select name="view" id="input7" class="form-select">
-                                                            <option selected="">Choose...</option>
-                                                            <option value="persawahan"
-                                                                {{ $editData->view == 'persawahan' ? 'selected' : '' }}>
-                                                                Persawahan</option>
-                                                            <option value="pegunungan"
-                                                                {{ $editData->view == 'pegunungan' ? 'selected' : '' }}>
-                                                                Pegunungan</option>
+                                                            <option selected="">Pilih</option>
+                                                            <option value="Agrowisata"
+                                                                {{ $editData->view == 'Agrowisata' ? 'selected' : '' }}>
+                                                                Agrowisata</option>
+                                                            <option value="Andong Trifting"
+                                                                {{ $editData->view == 'Andong Trifting' ? 'selected' : '' }}>
+                                                                Andong Trifting</option>
+                                                            <option value="Outbond"
+                                                                {{ $editData->view == 'Outbond' ? 'selected' : '' }}>
+                                                                Outbond</option>
+                                                            <option value="Trip Tour"
+                                                                {{ $editData->view == 'Trip Tour' ? 'selected' : '' }}>
+                                                                Trip Tour</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <label for="input7" class="form-label">Bed Style</label>
                                                         <select name="bed_style" id="input7" class="form-select">
-                                                            <option selected="">Choose...</option>
+                                                            <option selected="">Pilih</option>
+                                                            <option value="King Bed"
+                                                                {{ $editData->bed_style == 'King Bed' ? 'selected' : '' }}>
+                                                                King Bed</option>
                                                             <option value="Queen Bed"
                                                                 {{ $editData->bed_style == 'Queen Bed' ? 'selected' : '' }}>
                                                                 Queen Bed</option>
                                                             <option value="Twin Bed"
                                                                 {{ $editData->bed_style == 'Twin Bed' ? 'selected' : '' }}>
                                                                 Twin Bed</option>
-                                                            <option value="King Bed"
-                                                                {{ $editData->bed_style == 'King Bed' ? 'selected' : '' }}>
-                                                                King Bed</option>
+                                                            <option value="Single Bed"
+                                                                {{ $editData->bed_style == 'Single Bed' ? 'selected' : '' }}>
+                                                                Single Bed</option>
+                                                            <option value="Double Bed"
+                                                                {{ $editData->bed_style == 'Double Bed' ? 'selected' : '' }}>
+                                                                Double Bed</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-12">
-                                                        <label for="input5" class="form-label">Short Description</label>
+                                                        <label for="input5" class="form-label">Deskripsi Singkat</label>
                                                         <textarea class="form-control" name="short_desc" rows="3" id="input5" placeholder="Description">{{ $editData->short_desc }}</textarea>
                                                     </div>
                                                     <div class="col-md-12">
-                                                        <label for="input5" class="form-label">Description</label>
+                                                        <label for="input5" class="form-label">Deskripsi</label>
                                                         <textarea class="form-control" name="description" rows="3" id="myeditorinstance">{!! $editData->description !!}</textarea>
                                                     </div>
 
@@ -142,61 +157,125 @@
                                                                     <div class="row add_item">
                                                                         <div class="col-md-8">
                                                                             <label for="facility_name" class="form-label">
-                                                                                Room Facilities </label>
+                                                                                Fasilitas</label>
                                                                             <select name="facility_name[]"
                                                                                 id="facility_name" class="form-control">
-                                                                                <option value="">Select Facility
+                                                                                <option value="">Pilih
                                                                                 </option>
-                                                                                <option value="Complimentary Breakfast"
-                                                                                    {{ $item->facility_name == 'Complimentary Breakfast' ? 'selected' : '' }}>
-                                                                                    Complimentary Breakfast</option>
-                                                                                <option value="32/42 inch LED TV"
-                                                                                    {{ $item->facility_name == 'Complimentary Breakfast' ? 'selected' : '' }}>
-                                                                                    32/42 inch LED TV</option>
+                                                                                <option value="Area Parkir"
+                                                                                    {{ $item->facility_name == 'Area Parkir' ? 'selected' : '' }}>
+                                                                                    Area Parkir</option>
+                                                                                <option value="TV"
+                                                                                    {{ $item->facility_name == 'TV' ? 'selected' : '' }}>
+                                                                                    TV</option>
 
-                                                                                <option value="Smoke alarms"
-                                                                                    {{ $item->facility_name == 'Smoke alarms' ? 'selected' : '' }}>
-                                                                                    Smoke alarms</option>
+                                                                                <option value="Kipas Angin"
+                                                                                    {{ $item->facility_name == 'Kipas Angin' ? 'selected' : '' }}>
+                                                                                    Kipas Angin</option>
 
-                                                                                <option value="Minibar"
-                                                                                    {{ $item->facility_name == 'Complimentary Breakfast' ? 'selected' : '' }}>
-                                                                                    Minibar</option>
+                                                                                <option value="AC"
+                                                                                    {{ $item->facility_name == 'AC' ? 'selected' : '' }}>
+                                                                                    AC</option>
 
-                                                                                <option value="Work Desk"
-                                                                                    {{ $item->facility_name == 'Work Desk' ? 'selected' : '' }}>
-                                                                                    Work Desk</option>
+                                                                                <option value="Kamar Mandi Luar"
+                                                                                    {{ $item->facility_name == 'Kamar Mandi Luar' ? 'selected' : '' }}>
+                                                                                    Kamar Mandi Luar</option>
 
-                                                                                <option value="Free Wi-Fi"
-                                                                                    {{ $item->facility_name == 'Free Wi-Fi' ? 'selected' : '' }}>
-                                                                                    Free Wi-Fi</option>
+                                                                                <option value="Kamar Mandi Dalam"
+                                                                                    {{ $item->facility_name == 'Kamar Mandi Dalam' ? 'selected' : '' }}>
+                                                                                    Kamar Mandi Dalam</option>
 
-                                                                                <option value="Safety box"
-                                                                                    {{ $item->facility_name == 'Safety box' ? 'selected' : '' }}>
-                                                                                    Safety box</option>
+                                                                                <option value="Ruang Keluarga"
+                                                                                    {{ $item->facility_name == 'Ruang Keluarga' ? 'selected' : '' }}>
+                                                                                    Ruang Keluarga</option>
 
-                                                                                <option value="Rain Shower"
-                                                                                    {{ $item->facility_name == 'Rain Shower' ? 'selected' : '' }}>
-                                                                                    Rain Shower</option>
+                                                                                <option value="Rain Tamu"
+                                                                                    {{ $item->facility_name == 'Ruang Tamu' ? 'selected' : '' }}>
+                                                                                    Ruang Tamu</option>
 
-                                                                                <option value="Slippers"
-                                                                                    {{ $item->facility_name == 'Slippers' ? 'selected' : '' }}>
-                                                                                    Slippers</option>
+                                                                                <option value="Wi-Fi"
+                                                                                    {{ $item->facility_name == 'Wi-Fi' ? 'selected' : '' }}>
+                                                                                    Wi-Fi</option>
 
-                                                                                <option value="Hair dryer"
-                                                                                    {{ $item->facility_name == 'Hair dryer' ? 'selected' : '' }}>
-                                                                                    Hair dryer</option>
+                                                                                <option value="Water Heater"
+                                                                                    {{ $item->facility_name == 'Water Heater' ? 'selected' : '' }}>
+                                                                                    Water Heater</option>
 
-                                                                                <option value="Wake-up service"
-                                                                                    {{ $item->facility_name == 'Wake-up service' ? 'selected' : '' }}>
-                                                                                    Wake-up service</option>
+                                                                                <option value="Dapur"
+                                                                                    {{ $item->facility_name == 'Dapur' ? 'selected' : '' }}>
+                                                                                    Dapur</option>
 
-                                                                                <option value="Laundry & Dry Cleaning"
-                                                                                    {{ $item->facility_name == 'Laundry & Dry Cleaning' ? 'selected' : '' }}>
-                                                                                    Laundry & Dry Cleaning</option>
+                                                                                <option value="Kulkas"
+                                                                                    {{ $item->facility_name == 'Kulkas' ? 'selected' : '' }}>
+                                                                                    Kulkas</option>
 
-                                                                                <option value="Electronic door lock"
-                                                                                    {{ $item->facility_name == 'Electronic door lock' ? 'selected' : '' }}>
-                                                                                    Electronic door lock</option>
+                                                                                <option value="Mesin Cuci"
+                                                                                    {{ $item->facility_name == 'Mesin Cuci' ? 'selected' : '' }}>
+                                                                                    Mesin Cuci</option>
+
+                                                                                <option value="Dispenser"
+                                                                                    {{ $item->facility_name == 'Dispenser' ? 'selected' : '' }}>
+                                                                                    Dispenser</option>
+
+                                                                                <option value="Mushola"
+                                                                                    {{ $item->facility_name == 'Mushola' ? 'selected' : '' }}>
+                                                                                    Mushola</option>
+
+                                                                                <option value="Ruang Makan"
+                                                                                    {{ $item->facility_name == 'Ruang Makan' ? 'selected' : '' }}>
+                                                                                    Ruang Makan</option>
+
+                                                                                <option value="Coffee break"
+                                                                                    {{ $item->facility_name == 'Coffee Break' ? 'selected' : '' }}>
+                                                                                    Coffee Break</option>
+
+                                                                                <option value="Extra Bed"
+                                                                                    {{ $item->facility_name == 'Extra Bed' ? 'selected' : '' }}>
+                                                                                    Extra Bed</option>
+
+                                                                                <option value="Paket Breakfast"
+                                                                                    {{ $item->facility_name == 'Paket Breakfast' ? 'selected' : '' }}>
+                                                                                    Paket Breakfast</option>
+
+                                                                                <option value="Kafe"
+                                                                                    {{ $item->facility_name == 'Kafe' ? 'selected' : '' }}>
+                                                                                    Kafe</option>
+
+                                                                                <option value="Butik"
+                                                                                    {{ $item->facility_name == 'Butik' ? 'selected' : '' }}>
+                                                                                    Butik</option>
+
+                                                                                <option value="Treadmill"
+                                                                                    {{ $item->facility_name == 'Treadmill' ? 'selected' : '' }}>
+                                                                                    Treadmill</option>
+
+                                                                                <option value="Sepeda"
+                                                                                    {{ $item->facility_name == 'Sepeda' ? 'selected' : '' }}>
+                                                                                    Sepeda</option>
+
+                                                                                <option value="Mini Bar"
+                                                                                    {{ $item->facility_name == 'Mini Bar' ? 'selected' : '' }}>
+                                                                                    Mini Bar</option>
+
+                                                                                <option value="Oven"
+                                                                                    {{ $item->facility_name == 'Oven' ? 'selected' : '' }}>
+                                                                                    Oven</option>
+
+                                                                                <option value="Kompor"
+                                                                                    {{ $item->facility_name == 'Kompor' ? 'selected' : '' }}>
+                                                                                    Kompor</option>
+
+                                                                                <option value="Lemari"
+                                                                                    {{ $item->facility_name == 'Lemari' ? 'selected' : '' }}>
+                                                                                    Lemari</option>
+
+                                                                                <option value="Pendopo"
+                                                                                    {{ $item->facility_name == 'Pendopo' ? 'selected' : '' }}>
+                                                                                    Pendopo</option>
+
+                                                                                <option value="Sound System"
+                                                                                    {{ $item->facility_name == 'Sound System' ? 'selected' : '' }}>
+                                                                                    Sound System</option>
                                                                             </select>
                                                                         </div>
                                                                         <div class="col-md-4">
@@ -219,36 +298,59 @@
                                                                     <div class="row add_item">
                                                                         <div class="col-md-6">
                                                                             <label for="basic_facility_name"
-                                                                                class="form-label">Room Facilities </label>
+                                                                                class="form-label">Fasilitas</label>
                                                                             <select name="facility_name[]"
                                                                                 id="basic_facility_name"
                                                                                 class="form-control">
-                                                                                <option value="">Select Facility
+                                                                                <option value="">Pilih</option>
+                                                                                <option value="Area Parkir">
+                                                                                    Area Parkir</option>
+                                                                                <option value="TV">TV</option>
+                                                                                <option value="Kipas Angin">Kipas Angin
                                                                                 </option>
-                                                                                <option value="Complimentary Breakfast">
-                                                                                    Complimentary Breakfast</option>
-                                                                                <option value="32/42 inch LED TV"> 32/42
-                                                                                    inch LED TV</option>
-                                                                                <option value="Smoke alarms">Smoke alarms
+                                                                                <option value="AC">AC</option>
+                                                                                <option value="Kamar Mandi Dalam">Kamar
+                                                                                    Mandi Luar
                                                                                 </option>
-                                                                                <option value="Minibar"> Minibar</option>
-                                                                                <option value="Work Desk">Work Desk
+                                                                                <option value="Kamar Mandi Dalam">Kamar
+                                                                                    Mandi Dalam
                                                                                 </option>
-                                                                                <option value="Free Wi-Fi">Free Wi-Fi
+                                                                                <option value="Ruang Keluarga">Ruang
+                                                                                    Keluarga
                                                                                 </option>
-                                                                                <option value="Safety box">Safety box
+                                                                                <option value="Ruang Tamu">Ruang Tamu
                                                                                 </option>
-                                                                                <option value="Rain Shower">Rain Shower
+                                                                                <option value="Wi-Fi">Wi-Fi</option>
+                                                                                <option value="Water Heater">Water Heater
                                                                                 </option>
-                                                                                <option value="Slippers">Slippers</option>
-                                                                                <option value="Hair dryer">Hair dryer
+                                                                                <option value="Dapur">Dapur</option>
+                                                                                <option value="Kulkas">
+                                                                                    Kulkas</option>
+                                                                                <option value="Mesin Cuci">
+                                                                                    Mesin Cuci</option>
+                                                                                <option value="Dispenser">Dispenser
                                                                                 </option>
-                                                                                <option value="Wake-up service">Wake-up
-                                                                                    service</option>
-                                                                                <option value="Laundry & Dry Cleaning">
-                                                                                    Laundry & Dry Cleaning</option>
-                                                                                <option value="Electronic door lock">
-                                                                                    Electronic door lock</option>
+                                                                                <option value="Mushola">Mushola</option>
+                                                                                <option value="Ruang Makan">Ruang Makan
+                                                                                </option>
+                                                                                <option value="Coffe Break">Coffe Break
+                                                                                </option>
+                                                                                <option value="Extra Bed">Extra Bed
+                                                                                </option>
+                                                                                <option value="Paket Breakfast">Paket
+                                                                                    Breakfast</option>
+                                                                                <option value="Kafe">Kafe</option>
+                                                                                <option value="Butik">Butik</option>
+                                                                                <option value="Treadmill">Treadmill
+                                                                                </option>
+                                                                                <option value="Sepeda">Sepeda</option>
+                                                                                <option value="Mini Bar">Mini Bar</option>
+                                                                                <option value="Oven">Oven</option>
+                                                                                <option value="Kompor">Kompor</option>
+                                                                                <option value="Lemari">Lemari</option>
+                                                                                <option value="Pendopo">Pendopo</option>
+                                                                                <option value="Sound System">Sound System
+                                                                                </option>
                                                                             </select>
                                                                         </div>
                                                                         <div class="col-md-6">
@@ -271,8 +373,8 @@
 
                                                     <div class="col-md-12">
                                                         <div class="d-md-flex d-grid align-items-center gap-3">
-                                                            <button type="submit" class="btn btn-primary px-4">Save
-                                                                Changes</button>
+                                                            <button type="submit" class="btn btn-primary px-4">Simpan
+                                                                Perubahan</button>
                                                         </div>
                                                     </div>
                                                 </form>
@@ -285,7 +387,7 @@
                                         <div class="card-body">
                                             <a class="card-title btn btn-primary float-right" onclick="addRoomNo()"
                                                 id="addRoomNo">
-                                                <i class="lni lni-plus">Add New</i>
+                                                <i class="lni lni-plus"> Tambah Kamar</i>
                                             </a>
                                             <div class="roomnoHide" id="roomnoHide">
                                                 <form action="{{ route('room.number.store', $editData->id) }}"
@@ -295,24 +397,24 @@
                                                         value="{{ $editData->room_type_id }}">
                                                     <div class="row">
                                                         <div class="col-md-4">
-                                                            <label for="input2" class="form-label">Room Number</label>
+                                                            <label for="input2" class="form-label">No Kamar</label>
                                                             <input type="text" name="room_number" class="form-control"
                                                                 id="input2">
                                                         </div>
 
                                                         <div class="col-md-4">
-                                                            <label for="input7" class="form-label">Status </label>
+                                                            <label for="input7" class="form-label">Status</label>
                                                             <select name="status" id="input7" class="form-select">
-                                                                <option selected="">Select Status...</option>
-                                                                <option value="Active">Active </option>
-                                                                <option value="Inactive">Inactive </option>
+                                                                <option selected="">Pilih</option>
+                                                                <option value="Active">Aktif</option>
+                                                                <option value="Inactive">Tidak Aktif</option>
 
                                                             </select>
                                                         </div>
 
                                                         <div class="col-md-4">
                                                             <button type="submit" class="btn btn-success"
-                                                                style="margin-top: 28px;">Save</button>
+                                                                style="margin-top: 28px;">Simpan</button>
                                                         </div>
                                                     </div>
                                                 </form>
@@ -320,9 +422,9 @@
                                             <table class="table mb-0 table-striped" id="roomview">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col">Room Number</th>
+                                                        <th scope="col">No Kamar</th>
                                                         <th scope="col">Status</th>
-                                                        <th scope="col">Action</th>
+                                                        <th scope="col">Aksi</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -333,10 +435,10 @@
                                                             <td>
                                                                 <a href="{{ route('edit.room.number', $item->id) }}"
                                                                     class="btn btn-warning px-3 radius-30">
-                                                                    Edit</a>
+                                                                    Ubah</a>
                                                                 <a href="{{ route('delete.room.number', $item->id) }}"
                                                                     class="btn btn-danger px-3 radius-30" id="delete">
-                                                                    Delete</a>
+                                                                    Hapus</a>
                                                             </td>
                                                         </tr>
                                                     @endforeach
@@ -402,22 +504,57 @@
                 <div class="container mt-2">
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label for="basic_facility_name">Room Facilities</label>
+                            <label for="basic_facility_name">Fasilitas</label>
                             <select name="facility_name[]" id="basic_facility_name" class="form-control">
-                                <option value="">Select Facility</option>
-                                <option value="Complimentary Breakfast">Complimentary Breakfast</option>
-                                <option value="32/42 inch LED TV"> 32/42 inch LED TV</option>
-                                <option value="Smoke alarms">Smoke alarms</option>
-                                <option value="Minibar"> Minibar</option>
-                                <option value="Work Desk">Work Desk</option>
-                                <option value="Free Wi-Fi">Free Wi-Fi</option>
-                                <option value="Safety box">Safety box</option>
-                                <option value="Rain Shower">Rain Shower</option>
-                                <option value="Slippers">Slippers</option>
-                                <option value="Hair dryer">Hair dryer</option>
-                                <option value="Wake-up service">Wake-up service</option>
-                                <option value="Laundry & Dry Cleaning">Laundry & Dry Cleaning</option>
-                                <option value="Electronic door lock">Electronic door lock</option>
+                                <option value="">Pilih</option>
+                                <option value="Area Parkir">
+                                    Area Parkir</option>
+                                <option value="TV">TV</option>
+                                <option value="Kipas Angin">Kipas Angin
+                                </option>
+                                <option value="AC">AC</option>
+                                <option value="Kamar Mandi Dalam">Kamar
+                                    Mandi Luar
+                                </option>
+                                <option value="Kamar Mandi Dalam">Kamar
+                                    Mandi Dalam
+                                </option>
+                                <option value="Ruang Keluarga">Ruang
+                                    Keluarga
+                                </option>
+                                <option value="Ruang Tamu">Ruang Tamu
+                                </option>
+                                <option value="Wi-Fi">Wi-Fi</option>
+                                <option value="Water Heater">Water Heater
+                                </option>
+                                <option value="Dapur">Dapur</option>
+                                <option value="Kulkas">
+                                    Kulkas</option>
+                                <option value="Mesin Cuci">
+                                    Mesin Cuci</option>
+                                <option value="Dispenser">Dispenser
+                                </option>
+                                <option value="Mushola">Mushola</option>
+                                <option value="Ruang Makan">Ruang Makan
+                                </option>
+                                <option value="Coffe Break">Coffe Break
+                                </option>
+                                <option value="Extra Bed">Extra Bed
+                                </option>
+                                <option value="Paket Breakfast">Paket
+                                    Breakfast</option>
+                                <option value="Kafe">Kafe</option>
+                                <option value="Butik">Butik</option>
+                                <option value="Treadmill">Treadmill
+                                </option>
+                                <option value="Sepeda">Sepeda</option>
+                                <option value="Mini Bar">Mini Bar</option>
+                                <option value="Oven">Oven</option>
+                                <option value="Kompor">Kompor</option>
+                                <option value="Lemari">Lemari</option>
+                                <option value="Pendopo">Pendopo</option>
+                                <option value="Sound System">Sound System
+                                </option>
                             </select>
                         </div>
                         <div class="form-group col-md-6" style="padding-top: 20px">

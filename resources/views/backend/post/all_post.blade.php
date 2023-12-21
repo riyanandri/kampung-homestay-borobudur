@@ -9,13 +9,13 @@
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">All Post</li>
+                        <li class="breadcrumb-item active" aria-current="page">Daftar Artikel</li>
                     </ol>
                 </nav>
             </div>
             <div class="ms-auto">
                 <div class="btn-group">
-                    <a href="{{ route('add.blog.post') }}" class="btn btn-primary px-5">Add Post</a>
+                    <a href="{{ route('add.blog.post') }}" class="btn btn-primary px-5">Tambah Artikel</a>
                 </div>
             </div>
         </div>
@@ -28,10 +28,10 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Post Title</th>
-                                <th>Blog Category</th>
-                                <th>Post Image</th>
-                                <th>Action</th>
+                                <th>Judul Artikel</th>
+                                <th>Kategori Blog</th>
+                                <th>Gambar</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -45,9 +45,9 @@
                                     <td>
                                         <a href="{{ route('edit.blog.post', $item->id) }}"
                                             class="btn btn-warning px-3 radius-30">
-                                            Edit</a>
+                                            Ubah</a>
                                         <a href="{{ route('delete.blog.post', $item->id) }}"
-                                            class="btn btn-danger px-3 radius-30" id="delete">Delete</a>
+                                            class="btn btn-danger px-3 radius-30" id="delete">Hapus</a>
                                     </td>
                                 </tr>
                             @endforeach

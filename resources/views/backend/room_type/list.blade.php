@@ -9,21 +9,20 @@
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Room Type List</li>
+                        <li class="breadcrumb-item active" aria-current="page">Daftar Tipe Kamar</li>
                     </ol>
                 </nav>
             </div>
             <div class="ms-auto">
                 @if (Auth::user()->can('room.type.add'))
                     <div class="btn-group">
-                        <a href="{{ route('add.room.type') }}" class="btn btn-primary px-5">Add Room
-                            Type</a>
+                        <a href="{{ route('add.room.type') }}" class="btn btn-primary px-5">Tambah Tipe Kamar</a>
                     </div>
                 @endif
             </div>
         </div>
         <!--end breadcrumb-->
-        <h6 class="mb-0 text-uppercase">All Room Type</h6>
+        <h6 class="mb-0 text-uppercase">Daftar Tipe Kamar</h6>
         <hr />
         <div class="card">
             <div class="card-body">
@@ -32,9 +31,9 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Image</th>
-                                <th>Name</th>
-                                <th>Action</th>
+                                <th>Gambar</th>
+                                <th>Nama</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -53,11 +52,11 @@
                                         @foreach ($rooms as $roo)
                                             @if (Auth::user()->can('room.type.edit'))
                                                 <a href="{{ route('edit.room', $roo->id) }}"
-                                                    class="btn btn-warning px-3 radius-30">Edit</a>
+                                                    class="btn btn-warning px-3 radius-30">Ubah</a>
                                             @endif
                                             @if (Auth::user()->can('room.type.delete'))
                                                 <a href="{{ route('delete.room', $roo->id) }}"
-                                                    class="btn btn-danger px-3 radius-30" id="delete">Delete</a>
+                                                    class="btn btn-danger px-3 radius-30" id="delete">Hapus</a>
                                             @endif
                                         @endforeach
                                     </td>

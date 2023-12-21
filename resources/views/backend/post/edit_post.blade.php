@@ -6,13 +6,13 @@
     <div class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-            <div class="breadcrumb-title pe-3">Edit Blog Post</div>
+            <div class="breadcrumb-title pe-3">Ubah Artikel</div>
             <div class="ps-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Edit Blog Post</li>
+                        <li class="breadcrumb-item active" aria-current="page">Ubah Artikel</li>
                     </ol>
                 </nav>
             </div>
@@ -30,9 +30,9 @@
                                     @csrf
                                     <input type="hidden" name="id" value="{{ $post->id }}">
                                     <div class="col-md-6">
-                                        <label for="input7" class="form-label">Blog Category</label>
+                                        <label for="input7" class="form-label">Kategori Blog</label>
                                         <select name="blogcat_id" id="input7" class="form-select">
-                                            <option selected="">Select Category </option>
+                                            <option selected="">Pilih</option>
                                             @foreach ($blogcat as $cat)
                                                 <option value="{{ $cat->id }}"
                                                     {{ $cat->id == $post->blogcat_id ? 'selected' : '' }}>
@@ -42,23 +42,23 @@
                                     </div>
 
                                     <div class="col-md-6">
-                                        <label for="input1" class="form-label">Post Title</label>
+                                        <label for="input1" class="form-label">Judul Artikel</label>
                                         <input type="text" name="post_title" class="form-control" id="input1"
                                             value="{{ $post->post_title }}">
                                     </div>
 
                                     <div class="col-md-12">
-                                        <label for="input11" class="form-label">Short Description</label>
+                                        <label for="input11" class="form-label">Deskripsi Singkat</label>
                                         <textarea name="short_desc" class="form-control" id="input11" rows="3">{{ $post->short_desc }}</textarea>
                                     </div>
 
                                     <div class="col-md-12">
-                                        <label for="input11" class="form-label">Post Description</label>
+                                        <label for="input11" class="form-label">Deskripsi Artikel</label>
                                         <textarea name="long_desc" class="form-control" id="myeditorinstance">{!! $post->long_desc !!}</textarea>
                                     </div>
 
                                     <div class="col-md-6">
-                                        <label for="input1" class="form-label">Post Image</label>
+                                        <label for="input1" class="form-label">Gambar</label>
                                         <input class="form-control" name="post_image" type="file" id="image">
                                     </div>
 
@@ -70,7 +70,7 @@
 
                                     <div class="col-md-12">
                                         <div class="d-md-flex d-grid align-items-center gap-3">
-                                            <button type="submit" class="btn btn-primary px-4">Submit</button>
+                                            <button type="submit" class="btn btn-primary px-4">Simpan Perubahan</button>
                                         </div>
                                     </div>
                                 </form>

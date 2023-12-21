@@ -10,14 +10,14 @@
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">All Blog Category</li>
+                        <li class="breadcrumb-item active" aria-current="page">Daftar Kategori Blog</li>
                     </ol>
                 </nav>
             </div>
             <div class="ms-auto">
                 <div class="btn-group">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add
-                        Blog Category</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Tambah Kategori Blog</button>
                 </div>
             </div>
         </div>
@@ -30,9 +30,9 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Category Name </th>
-                                <th>Category Slug</th>
-                                <th>Action</th>
+                                <th>Nama Kategori</th>
+                                <th>Slug</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,9 +44,9 @@
                                     <td>
                                         <button type="button" class="btn btn-warning px-3 radius-30" data-bs-toggle="modal"
                                             data-bs-target="#category" id="{{ $item->id }}"
-                                            onclick="categoryEdit(this.id)">Edit</button>
+                                            onclick="categoryEdit(this.id)">Ubah</button>
                                         <a href="{{ route('delete.blog.category', $item->id) }}"
-                                            class="btn btn-danger px-3 radius-30" id="delete">Delete</a>
+                                            class="btn btn-danger px-3 radius-30" id="delete">Hapus</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -63,19 +63,19 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Blog Category</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Kategori Blog</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{ route('store.blog.category') }}" method="post">
                     @csrf
                     <div class="modal-body">
                         <div class="form-group mb-3">
-                            <label for="" class="form-label">Blog Category Name</label>
+                            <label for="" class="form-label">Nama Kategori Blog</label>
                             <input type="text" name="category_name" class="form-control">
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>
                 </form>
             </div>
@@ -87,7 +87,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit Blog Category</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Ubah Kategori Blog</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{ route('update.blog.category') }}" method="post">
@@ -95,12 +95,12 @@
                     <div class="modal-body">
                         <input type="hidden" name="cat_id" id="cat_id">
                         <div class="form-group mb-3">
-                            <label for="" class="form-label">Blog Category Name</label>
+                            <label for="" class="form-label">Nama Kategori Blog</label>
                             <input type="text" name="category_name" class="form-control" id="cat">
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
                     </div>
                 </form>
             </div>
