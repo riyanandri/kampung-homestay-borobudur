@@ -47,8 +47,8 @@
                             <div class="card-body p-sm-5">
                                 <div class="">
                                     <div class="mb-3 text-center">
-                                        <img src="{{ asset('backend/assets/images/logo-icon.png') }}" width="60"
-                                            alt="">
+                                        <img src="{{ asset('backend/assets/images/logo-homestay.png') }}"
+                                            width="80">
                                     </div>
                                     <div class="text-center mb-4">
                                         <h5 class="">Kampung Homestay Admin</h5>

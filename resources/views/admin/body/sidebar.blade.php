@@ -1,12 +1,12 @@
 <div class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
         <div>
-            <img src="{{ asset('backend/assets/images/logo-icon.png') }}" class="logo-icon" alt="logo icon">
+            <img src="{{ asset('backend/assets/images/logo-homestay.png') }}" class="logo-icon" alt="logo icon">
         </div>
         <div>
-            <h4 class="logo-text"></h4>
+            <h4 class="logo-text">Homestay</h4>
         </div>
-        <div class="toggle-icon ms-auto"><i class='bx bx-arrow-back'></i>
+        <div class="toggle-icon ms-auto"><i class='bx bx-menu'></i>
         </div>
     </div>
     <!--navigation-->
@@ -61,7 +61,7 @@
                     <div class="menu-title">Kelola Tipe Kamar</div>
                 </a>
                 <ul>
-                    @if (Auth::user()->can('room.type'))
+                    @if (Auth::user()->can('room.type.list'))
                         <li> <a href="{{ route('room.type.list') }}"><i class='bx bx-radio-circle'></i>Daftar Tipe
                                 Kamar</a>
                         </li>

@@ -5,8 +5,8 @@
     <!-- Menu For Mobile Device -->
     <div class="mobile-nav">
         <a href="{{ url('/') }}" class="logo">
-            <img src="{{ asset($setting->logo) }}" class="logo-one" alt="Logo">
-            <img src="{{ asset($setting->logo) }}" class="logo-two" alt="Logo">
+            <img src="{{ asset('backend/assets/images/logo-homestay.png') }}" style="max-width: 35px; height: auto;"
+                alt="Logo">
         </a>
     </div>
 
@@ -14,9 +14,9 @@
     <div class="main-nav">
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light ">
-                <a class="navbar-brand" href="index.html">
-                    <img src="{{ asset($setting->logo) }}" class="logo-one" alt="Logo">
-                    <img src="{{ asset($setting->logo) }}" class="logo-two" alt="Logo">
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    <img src="{{ asset('backend/assets/images/logo-homestay.png') }}"
+                        style="max-width: 60px; height: auto;" alt="Logo">
                 </a>
 
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">

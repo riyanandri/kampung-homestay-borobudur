@@ -8,8 +8,9 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="footer-widget">
                         <div class="footer-logo">
-                            <a href="index.html">
-                                <img src="{{ asset($setting->logo) }}" alt="Images">
+                            <a href="{{ url('/') }}">
+                                <img src="{{ asset('backend/assets/images/logo-homestay.png') }}"
+                                    style="max-width: 20%; height: auto;" alt="Images">
                             </a>
                         </div>
                         <ul class="footer-list-contact">

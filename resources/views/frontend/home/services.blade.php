@@ -7,8 +7,8 @@
 
         <div class="row pt-45">
             <div class="col-lg-12 col-md-12">
-                <iframe width="1300" height="680" src="https://www.youtube.com/embed/uP6yFNw_F3A?si=Et32y3AXcr23AdfT"
-                    title="Kampung Homestay Borobudur" frameborder="0"
+                <iframe width="1300" height="600" src="https://www.youtube.com/embed/Jv3p59zcpRQ?si=jUFU5oi3dECTPiP4"
+                    title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
             </div>
