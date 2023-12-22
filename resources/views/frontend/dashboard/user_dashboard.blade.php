@@ -2,17 +2,17 @@
 
 @section('main')
     <!-- Inner Banner -->
-    <div class="inner-banner inner-bg6">
+    <div class="inner-banner inner-bg-contact">
         <div class="container">
             <div class="inner-title">
                 <ul>
                     <li>
-                        <a href="{{ url('/') }}">Home</a>
+                        <a href="{{ url('/') }}">Beranda</a>
                     </li>
                     <li><i class='bx bx-chevron-right'></i></li>
-                    <li>User Dashboard </li>
+                    <li>Dasbor Pengguna</li>
                 </ul>
-                <h3>User Dashboard</h3>
+                <h3>Dasbor Pengguna</h3>
             </div>
         </div>
     </div>
@@ -30,7 +30,7 @@
                 <div class="col-lg-9">
                     <div class="service-article">
                         <div class="service-article-title">
-                            <h2>User Dashboard </h2>
+                            <h2>Dasbor Pengguna</h2>
                         </div>
 
                         <div class="service-article-content">
@@ -39,7 +39,7 @@
                                     <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
                                         <div class="card-header">Total Booking</div>
                                         <div class="card-body">
-                                            <h1 class="card-title" style="font-size: 45px;">3 Total</h1>
+                                            <h1 class="card-title" style="font-size: 45px;">0 Total</h1>
 
                                         </div>
                                     </div>
@@ -47,9 +47,9 @@
 
                                 <div class="col-md-4">
                                     <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
-                                        <div class="card-header">Pending Booking </div>
+                                        <div class="card-header">Booking Pending</div>
                                         <div class="card-body">
-                                            <h1 class="card-title" style="font-size: 45px;">3 Pending</h1>
+                                            <h1 class="card-title" style="font-size: 45px;">0 Pending</h1>
 
                                         </div>
                                     </div>
@@ -57,9 +57,9 @@
 
                                 <div class="col-md-4">
                                     <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-                                        <div class="card-header">Complete Booking</div>
+                                        <div class="card-header">Booking Berhasil</div>
                                         <div class="card-body">
-                                            <h1 class="card-title" style="font-size: 45px;">3 Complete</h1>
+                                            <h1 class="card-title" style="font-size: 45px;">0 Complete</h1>
 
                                         </div>
                                     </div>

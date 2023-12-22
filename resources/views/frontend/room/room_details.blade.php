@@ -33,7 +33,7 @@
                                             <label>Check in</label>
                                             <div class="input-group">
                                                 <input id="datetimepicker" type="text" class="form-control"
-                                                    placeholder="09/29/2020">
+                                                    placeholder="mm/dd/yyyy">
                                                 <span class="input-group-addon"></span>
                                             </div>
                                             <i class='bx bxs-calendar'></i>
@@ -45,7 +45,7 @@
                                             <label>Check Out</label>
                                             <div class="input-group">
                                                 <input id="datetimepicker-check" type="text" class="form-control"
-                                                    placeholder="09/29/2020">
+                                                    placeholder="mm/dd/yyyy">
                                                 <span class="input-group-addon"></span>
                                             </div>
                                             <i class='bx bxs-calendar'></i>
@@ -56,11 +56,10 @@
                                         <div class="form-group">
                                             <label>Jumlah Tamu</label>
                                             <select class="form-control">
-                                                <option>01</option>
-                                                <option>02</option>
-                                                <option>03</option>
-                                                <option>04</option>
-                                                <option>05</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
                                             </select>
                                         </div>
                                     </div>
@@ -69,11 +68,16 @@
                                         <div class="form-group">
                                             <label>Jumlah Kamar</label>
                                             <select class="form-control">
-                                                <option>01</option>
-                                                <option>02</option>
-                                                <option>03</option>
-                                                <option>04</option>
-                                                <option>05</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
                                             </select>
                                         </div>
                                     </div>
@@ -103,7 +107,7 @@
                             <h2>{{ $roomDetails->roomType->name }}</h2>
                             <ul>
                                 <li>
-                                    <b> Harga : Rp. {{ $roomDetails->price }}/Malam</b>
+                                    <b> Harga : {{ formatRupiah($roomDetails->price) }} / Malam</b>
                                 </li>
                             </ul>
                         </div>
@@ -132,8 +136,8 @@
                                                         Orang<i class='bx bxs-cloud-download'></i></a>
                                                 </li>
                                                 <li>
-                                                    <a href="#"> <b>Ukuran : </b> {{ $roomDetails->size }} ft2<i
-                                                            class='bx bxs-cloud-download'></i></a>
+                                                    <a href="#"> <b>Ukuran : </b> {{ $roomDetails->size }}
+                                                        m<sup>2</sup><i class='bx bxs-cloud-download'></i></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -146,7 +150,7 @@
                                         <div class="side-bar-list">
                                             <ul>
                                                 <li>
-                                                    <a href="#"> <b>View : </b> {{ $roomDetails->view }} <i
+                                                    <a href="#"> <b>Wisata : </b> {{ $roomDetails->view }} <i
                                                             class='bx bxs-cloud-download'></i></a>
                                                 </li>
                                                 <li>
@@ -217,14 +221,14 @@
                                 <div class="col-lg-7 col-md-8 p-0">
                                     <div class="room-card-content">
                                         <h3>
-                                            <a
+                                            <a style="color: black;"
                                                 href="{{ url('room/details/' . $item->id) }}">{{ $item['roomType']['name'] }}</a>
                                         </h3>
-                                        <span>Rp. {{ $item->price }} /Malam</span>
+                                        <span>{{ formatRupiah($item->price) }} / Malam</span>
                                         <p>{{ $item->short_desc }}</p>
                                         <ul>
                                             <li><i class='bx bx-user'></i> {{ $item->room_capacity }} Orang</li>
-                                            <li><i class='bx bx-expand'></i> {{ $item->size }} ft2</li>
+                                            <li><i class='bx bx-expand'></i> {{ $item->size }} m<sup>2</sup></li>
                                         </ul>
 
                                         <ul>
@@ -232,7 +236,7 @@
                                             <li><i class='bx bxs-hotel'></i> {{ $item->bed_style }}</li>
                                         </ul>
 
-                                        <a href="room-details.html" class="book-more-btn">
+                                        <a href="{{ url('room/details/' . $item->id) }}" class="book-more-btn">
                                             Pesan Sekarang
                                         </a>
                                     </div>

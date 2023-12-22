@@ -6,8 +6,8 @@
 <div class="blog-area pt-100 pb-70">
     <div class="container">
         <div class="section-title text-center">
-            <span class="sp-color">BLOGS</span>
-            <h2>Our Latest Blogs to the Intranational Journal at a Glance</h2>
+            <span class="sp-color">Blog</span>
+            <h2>Sekilas Tentang Artikel Blog Terbaru Kami</h2>
         </div>
         <div class="row pt-45">
             @foreach ($blog as $item)

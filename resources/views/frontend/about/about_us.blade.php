@@ -72,7 +72,7 @@
                                             <label>Check in</label>
                                             <div class="input-group">
                                                 <input id="datetimepicker" type="text" name="check_in"
-                                                    class="form-control" placeholder="09/29/2020">
+                                                    class="form-control" placeholder="mm/dd/yyyy">
                                                 <span class="input-group-addon"></span>
                                             </div>
                                             <i class='bx bxs-calendar'></i>
@@ -84,7 +84,7 @@
                                             <label>Check Out</label>
                                             <div class="input-group">
                                                 <input id="datetimepicker-check" type="text" name="check_out"
-                                                    class="form-control" placeholder="09/29/2020">
+                                                    class="form-control" placeholder="mm/dd/yyyy">
                                                 <span class="input-group-addon"></span>
                                             </div>
                                             <i class='bx bxs-calendar'></i>
@@ -95,11 +95,10 @@
                                         <div class="form-group">
                                             <label>Tamu</label>
                                             <select name="persion" class="form-control">
-                                                <option>01</option>
-                                                <option>02</option>
-                                                <option>03</option>
-                                                <option>04</option>
-                                                <option>05</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
                                             </select>
                                         </div>
                                     </div>

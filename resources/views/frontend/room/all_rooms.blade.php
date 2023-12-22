@@ -35,11 +35,11 @@
                                     style="width: 550px; height:300px;">
                             </a>
                             <div class="content">
-                                <h6><a href="{{ url('room/details/' . $item->id) }}">{{ $item['roomType']['name'] }}</a>
-                                </h6>
+                                <h5><a style="color: black;"
+                                        href="{{ url('room/details/' . $item->id) }}">{{ $item['roomType']['name'] }}</a>
+                                </h5>
                                 <ul>
-                                    <li class="text-color">Rp. {{ $item->price }}</li>
-                                    <li class="text-color">Malam</li>
+                                    <li class="text-color">{{ formatRupiah($item->price) }} / Malam</li>
                                 </ul>
                             </div>
                         </div>

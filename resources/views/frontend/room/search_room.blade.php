@@ -52,8 +52,7 @@
                                             href="{{ route('search.room.details', $item->id . '?check_in=' . old('check_in') . '&check_out=' . old('check_out') . '&persion=' . old('persion')) }}">{{ $item['roomType']['name'] }}</a>
                                     </h6>
                                     <ul>
-                                        <li class="text-color">Rp. {{ $item->price }}</li>
-                                        <li class="text-color">Per Malam</li>
+                                        <li class="text-color">{{ formatRupiah($item->price) }} / Malam</li>
                                     </ul>
                                 </div>
                             </div>

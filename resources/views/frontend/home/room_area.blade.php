@@ -28,7 +28,7 @@
                                         <a
                                             href="{{ url('room/details/' . $item->id) }}">{{ $item['roomType']['name'] }}</a>
                                     </h3>
-                                    <span>Rp. {{ $item->price }}/Malam</span>
+                                    <span>{{ formatRupiah($item->price) }} / Malam</span>
                                     <p>{{ $item->short_desc }}</p>
                                     <ul>
                                         <li><i class='bx bx-user'></i> {{ $item->room_capacity }} Orang</li>
@@ -36,11 +36,11 @@
                                     </ul>
 
                                     <ul>
-                                        <li><i class='bx bx-show-alt'></i> {{ $item->view }}</li>
+                                        <li><i class='bx bx-trip'></i> {{ $item->view }}</li>
                                         <li><i class='bx bxs-hotel'></i> {{ $item->bed_style }}</li>
                                     </ul>
 
-                                    <a href="room-details.html" class="book-more-btn">
+                                    <a href="{{ url('room/details/' . $item->id) }}" class="book-more-btn">
                                         Pesan Sekarang
                                     </a>
                                 </div>

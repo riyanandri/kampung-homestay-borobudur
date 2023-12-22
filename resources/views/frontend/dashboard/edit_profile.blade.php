@@ -4,17 +4,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <!-- Inner Banner -->
-    <div class="inner-banner inner-bg6">
+    <div class="inner-banner inner-bg-contact">
         <div class="container">
             <div class="inner-title">
                 <ul>
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="{{ url('/') }}">Beranda</a>
                     </li>
                     <li><i class='bx bx-chevron-right'></i></li>
-                    <li>User Dashboard </li>
+                    <li>Dasbor Pengguna</li>
                 </ul>
-                <h3>User Dashboard</h3>
+                <h3>Dasbor Pengguna</h3>
             </div>
         </div>
     </div>
@@ -40,7 +40,7 @@
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12">
                                             <div class="billing-details">
-                                                <h3 class="title">User Profile </h3>
+                                                <h3 class="title">Profil Pengguna</h3>
 
                                                 <div class="row">
 
@@ -98,7 +98,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <button type="submit" class="btn btn-danger">Save Changes </button>
+                                                    <button type="submit" class="btn btn-danger">Simpan Perubahan</button>
                                                 </div>
                                             </div>
                                         </div>

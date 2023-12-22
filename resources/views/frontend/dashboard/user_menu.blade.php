@@ -4,7 +4,7 @@
 @endphp
 <div class="service-side-bar">
     <div class="services-bar-widget">
-        <h3 class="title">User Sidebar</h3>
+        <h3 class="title">Sidebar</h3>
         <div class="side-bar-categories">
             <img src="{{ !empty($profileData->photo) ? url('upload/user_images/' . $profileData->photo) : url('upload/no_image.jpg') }}"
                 class="rounded mx-auto d-block" alt="Image" style="width:100px; height:100px;">
@@ -15,19 +15,19 @@
             <ul>
 
                 <li>
-                    <a href="{{ route('dashboard') }}">Dashboard</a>
+                    <a href="{{ route('dashboard') }}">Dasbor</a>
                 </li>
                 <li>
-                    <a href="{{ route('user.profile') }}">Profile</a>
+                    <a href="{{ route('user.profile') }}">Profil</a>
                 </li>
                 <li>
-                    <a href="{{ route('user.change.password') }}">Change Password</a>
+                    <a href="{{ route('user.change.password') }}">Ganti Kata Sandi</a>
                 </li>
                 <li>
-                    <a href="{{ route('user.booking') }}">Booking Details </a>
+                    <a href="{{ route('user.booking') }}">Detail Booking</a>
                 </li>
                 <li>
-                    <a href="{{ route('user.logout') }}">Logout </a>
+                    <a href="{{ route('user.logout') }}">Keluar</a>
                 </li>
             </ul>
         </div>

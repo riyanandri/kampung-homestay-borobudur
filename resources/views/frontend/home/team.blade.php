@@ -5,7 +5,7 @@
     <div class="container">
         <div class="section-title text-center">
             <span class="sp-color">Owner</span>
-            <h2>Mari Tahu Lebih Jauh Dari Owner Homestay</h2>
+            <h2>Mari Mengenal Lebih Jauh Dari Owner Homestay</h2>
         </div>
         <div class="team-slider-two owl-carousel owl-theme pt-45">
             @foreach ($owner as $item)

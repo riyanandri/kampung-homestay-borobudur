@@ -1,21 +1,20 @@
 @extends('frontend.main')
 
 @section('main')
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <!-- Inner Banner -->
-    <div class="inner-banner inner-bg6">
+    <div class="inner-banner inner-bg-contact">
         <div class="container">
             <div class="inner-title">
                 <ul>
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="{{ url('/') }}">Beranda</a>
                     </li>
                     <li><i class='bx bx-chevron-right'></i></li>
-                    <li>User Booking List </li>
+                    <li>Daftar Booking</li>
                 </ul>
-                <h3>User Booking List</h3>
+                <h3>Daftar Booking</h3>
             </div>
         </div>
     </div>
@@ -40,16 +39,16 @@
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12">
                                             <div class="billing-details">
-                                                <h3 class="title">User Booking List </h3>
+                                                <h3 class="title">Daftar Booking</h3>
                                                 <table class="table table-striped">
                                                     <thead>
                                                         <tr>
-                                                            <th scope="col">B No</th>
-                                                            <th scope="col">B Date</th>
+                                                            <th scope="col">No Booking</th>
+                                                            <th scope="col">Tgl Booking</th>
                                                             <th scope="col">Customer</th>
-                                                            <th scope="col">Room</th>
+                                                            <th scope="col">Kamar</th>
                                                             <th scope="col">Check In/Out</th>
-                                                            <th scope="col">Total Room</th>
+                                                            <th scope="col">Total Kamar</th>
                                                             <th scope="col">Status</th>
                                                         </tr>
                                                     </thead>
@@ -70,7 +69,7 @@
                                                                 <td>{{ $item->number_of_rooms }}</td>
                                                                 <td>
                                                                     @if ($item->status == 1)
-                                                                        <span class="badge bg-success">Complete</span>
+                                                                        <span class="badge bg-success">Berhasil</span>
                                                                     @else
                                                                         <span class="badge bg-info text-dark">Pending</span>
                                                                     @endif
