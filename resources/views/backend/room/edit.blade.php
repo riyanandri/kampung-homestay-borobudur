@@ -49,13 +49,13 @@
                                                     <div class="col-md-4">
                                                         <label for="input2" class="form-label">Pengunjung
                                                             Dewasa (Max)</label>
-                                                        <input type="text" class="form-control" name="total_adult"
+                                                        <input type="number" class="form-control" name="total_adult"
                                                             id="input2" value="{{ $editData->total_adult }}">
                                                     </div>
                                                     <div class="col-md-4">
                                                         <label for="input2" class="form-label">Pengunjung Anak
                                                             Kecil (Max)</label>
-                                                        <input type="text" class="form-control" name="total_child"
+                                                        <input type="number" class="form-control" name="total_child"
                                                             id="input2" value="{{ $editData->total_child }}">
                                                     </div>
                                                     <div class="col-md-6">
@@ -82,7 +82,7 @@
                                                     </div>
                                                     <div class="col-md-3">
                                                         <label for="input1" class="form-label">Harga Kamar</label>
-                                                        <input type="text" class="form-control" name="price"
+                                                        <input type="number" class="form-control" name="price"
                                                             id="input1" value="{{ $editData->price }}">
                                                     </div>
                                                     <div class="col-md-3">
@@ -92,19 +92,19 @@
                                                     </div>
                                                     <div class="col-md-3">
                                                         <label for="input2" class="form-label">Diskon (%)</label>
-                                                        <input type="text" class="form-control" name="discount"
+                                                        <input type="number" class="form-control" name="discount"
                                                             id="input2" value="{{ $editData->discount }}">
                                                     </div>
                                                     <div class="col-md-3">
                                                         <label for="input2" class="form-label">Kapasitas Kamar
                                                             (Max)</label>
-                                                        <input type="text" class="form-control" name="room_capacity"
+                                                        <input type="number" class="form-control" name="room_capacity"
                                                             id="input2" value="{{ $editData->room_capacity }}">
                                                     </div>
                                                     <div class="col-md-6">
                                                         <label for="input7" class="form-label">Wisata</label>
                                                         <select name="view" id="input7" class="form-select">
-                                                            <option selected="">Pilih</option>
+                                                            <option>Pilih</option>
                                                             <option value="Agrowisata"
                                                                 {{ $editData->view == 'Agrowisata' ? 'selected' : '' }}>
                                                                 Agrowisata</option>
@@ -117,12 +117,15 @@
                                                             <option value="Trip Tour"
                                                                 {{ $editData->view == 'Trip Tour' ? 'selected' : '' }}>
                                                                 Trip Tour</option>
+                                                            <option value="Tidak Memiliki Paket Wisata"
+                                                                {{ $editData->view == 'Tidak Memiliki Paket Wisata' ? 'selected' : '' }}>
+                                                                Tidak Memiliki Paket Wisata</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <label for="input7" class="form-label">Bed Style</label>
                                                         <select name="bed_style" id="input7" class="form-select">
-                                                            <option selected="">Pilih</option>
+                                                            <option>Pilih</option>
                                                             <option value="King Bed"
                                                                 {{ $editData->bed_style == 'King Bed' ? 'selected' : '' }}>
                                                                 King Bed</option>
@@ -138,6 +141,9 @@
                                                             <option value="Double Bed"
                                                                 {{ $editData->bed_style == 'Double Bed' ? 'selected' : '' }}>
                                                                 Double Bed</option>
+                                                            <option value="King Size"
+                                                                {{ $editData->bed_style == 'King Size' ? 'selected' : '' }}>
+                                                                King Size</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-12">
@@ -160,8 +166,7 @@
                                                                                 Fasilitas</label>
                                                                             <select name="facility_name[]"
                                                                                 id="facility_name" class="form-control">
-                                                                                <option value="">Pilih
-                                                                                </option>
+                                                                                <option>Pilih</option>
                                                                                 <option value="Area Parkir"
                                                                                     {{ $item->facility_name == 'Area Parkir' ? 'selected' : '' }}>
                                                                                     Area Parkir</option>
@@ -302,7 +307,7 @@
                                                                             <select name="facility_name[]"
                                                                                 id="basic_facility_name"
                                                                                 class="form-control">
-                                                                                <option value="">Pilih</option>
+                                                                                <option>Pilih</option>
                                                                                 <option value="Area Parkir">
                                                                                     Area Parkir</option>
                                                                                 <option value="TV">TV</option>
@@ -387,7 +392,7 @@
                                         <div class="card-body">
                                             <a class="card-title btn btn-primary float-right" onclick="addRoomNo()"
                                                 id="addRoomNo">
-                                                <i class="lni lni-plus"> Tambah Kamar</i>
+                                                <i class="lni lni-plus">Tambah Kamar</i>
                                             </a>
                                             <div class="roomnoHide" id="roomnoHide">
                                                 <form action="{{ route('room.number.store', $editData->id) }}"
@@ -405,7 +410,7 @@
                                                         <div class="col-md-4">
                                                             <label for="input7" class="form-label">Status</label>
                                                             <select name="status" id="input7" class="form-select">
-                                                                <option selected="">Pilih</option>
+                                                                <option>Pilih</option>
                                                                 <option value="Active">Aktif</option>
                                                                 <option value="Inactive">Tidak Aktif</option>
 
@@ -506,7 +511,7 @@
                         <div class="form-group col-md-6">
                             <label for="basic_facility_name">Fasilitas</label>
                             <select name="facility_name[]" id="basic_facility_name" class="form-control">
-                                <option value="">Pilih</option>
+                                <option>Pilih</option>
                                 <option value="Area Parkir">
                                     Area Parkir</option>
                                 <option value="TV">TV</option>

@@ -10,7 +10,7 @@
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">All Contact Message </li>
+                        <li class="breadcrumb-item active" aria-current="page">Daftar Pesan</li>
                     </ol>
                 </nav>
             </div>
@@ -28,13 +28,13 @@
                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
-                                <th>Sl</th>
-                                <th>Name</th>
+                                <th>No</th>
+                                <th>Nama</th>
                                 <th>Email</th>
-                                <th>Phone</th>
-                                <th>Subject</th>
-                                <th>Message</th>
-                                <th>Time</th>
+                                <th>No Hp</th>
+                                <th>Subjek</th>
+                                <th>Pesan</th>
+                                <th>Waktu</th>
                             </tr>
                         </thead>
                         <tbody>

@@ -9,13 +9,13 @@
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">All Booking</li>
+                        <li class="breadcrumb-item active" aria-current="page">Daftar Booking</li>
                     </ol>
                 </nav>
             </div>
             <div class="ms-auto">
                 <div class="btn-group">
-                    <a href="{{ route('add.room.list') }}" class="btn btn-primary px-5">Add Booking </a>
+                    <a href="{{ route('add.room.list') }}" class="btn btn-primary px-5">Tambah Booking</a>
                 </div>
             </div>
         </div>
@@ -28,17 +28,17 @@
                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
-                                <th>Sl</th>
-                                <th>B No</th>
-                                <th>B Date</th>
+                                <th>No</th>
+                                <th>Nomor Booking</th>
+                                <th>Tgl Booking</th>
                                 <th>Customer</th>
-                                <th>Room</th>
-                                <th>Check IN/Out</th>
-                                <th>Total Room</th>
-                                <th>Guest</th>
-                                <th>Payment</th>
+                                <th>Kamar</th>
+                                <th>Check In/Out</th>
+                                <th>Total Kamar</th>
+                                <th>Pengunjung</th>
+                                <th>Pembayaran</th>
                                 <th>Status</th>
-                                <th>Action</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -55,21 +55,21 @@
                                     <td> {{ $item->persion }} </td>
                                     <td>
                                         @if ($item->payment_status == '1')
-                                            <span class="text-success">Complete</span>
+                                            <span class="text-success">Berhasil</span>
                                         @else
                                             <span class="text-danger">Pending</span>
                                         @endif
                                     </td>
                                     <td>
                                         @if ($item->status == '1')
-                                            <span class="text-success">Active</span>
+                                            <span class="text-success">Aktif</span>
                                         @else
                                             <span class="text-danger">Pending</span>
                                         @endif
                                     </td>
                                     <td>
                                         <a href="{{ route('delete.owner', $item->id) }}"
-                                            class="btn btn-danger px-3 radius-30" id="delete"> Delete</a>
+                                            class="btn btn-danger px-3 radius-30" id="delete"> Hapus</a>
                                     </td>
                                 </tr>
                             @endforeach

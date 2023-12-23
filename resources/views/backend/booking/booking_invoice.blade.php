@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Invoice</title>
+    <title>Faktur</title>
 
     <style type="text/css">
         * {
@@ -63,10 +63,9 @@
             <td align="right">
                 <pre class="font">
                Kampung Homestay Borobudur
-               Email: support@kampunghomestay.com <br>
-               Mob: 1245454545 <br>
-               Dhaka 1207,Dhanmondi:#4 <br>
-
+               Email : borobudurkampunghomestay@gmail.com <br>
+               No Hp : 0858-7946-2172 <br>
+               Dusun Ngaran 2, Borobudur, Magelang <br>
             </pre>
             </td>
         </tr>
@@ -80,11 +79,11 @@
 
         <thead class="table-light">
             <tr>
-                <th>Room Type</th>
-                <th>Total Room</th>
-                <th>Price</th>
-                <th>Check In / Out Date</th>
-                <th>Total Days</th>
+                <th>Tipe Kamar</th>
+                <th>Total Kamar</th>
+                <th>Harga</th>
+                <th>Tgl Check In/Out</th>
+                <th>Total Hari</th>
                 <th>Total </th>
             </tr>
         </thead>
@@ -92,13 +91,13 @@
             <tr>
                 <td>{{ $editData->room->roomType->name }}</td>
                 <td>{{ $editData->number_of_rooms }}</td>
-                <td>${{ $editData->actual_price }}</td>
+                <td>{{ formatRupiah($editData->actual_price) }}</td>
                 <td>
                     <span class="badge bg-primary">{{ $editData->check_in }}</span> /<br>
                     <span class="badge bg-warning text-dark">{{ $editData->check_out }}</span>
                 </td>
                 <td>{{ $editData->total_night }}</td>
-                <td>${{ $editData->actual_price * $editData->number_of_rooms }}</td>
+                <td>{{ formatRupiah($editData->actual_price * $editData->number_of_rooms) }}</td>
 
             </tr>
         </tbody>
@@ -109,15 +108,15 @@
     <table class="table test_table" style="float: right" border="none">
         <tr>
             <td>Subtotal</td>
-            <td>${{ $editData->subtotal }}</td>
+            <td>{{ formatRupiah($editData->subtotal) }}</td>
         </tr>
         <tr>
-            <td>Discount</td>
-            <td>${{ $editData->discount }}</td>
+            <td>Diskon</td>
+            <td>{{ formatRupiah($editData->discount) }}</td>
         </tr>
         <tr>
             <td>Grand Total</td>
-            <td>${{ $editData->total_price }}</td>
+            <td>{{ formatRupiah($editData->total_price) }}</td>
         </tr>
     </table>
 
@@ -131,7 +130,7 @@
 
 
     <div class="thanks mt-3">
-        <p>Thanks For Your Booking..!!</p>
+        <p>Terima kasih atas pesanan anda..!!</p>
     </div>
     <div class="authority float-right mt-5">
         <p>-----------------------------------</p>

@@ -83,21 +83,21 @@
                 </ul>
             </li>
         @endif
-        <li class="menu-label">Kelola Pesanan</li>
+        <li class="menu-label">Kelola Booking</li>
         @if (Auth::user()->can('booking.menu'))
             <li>
                 <a href="javascript:;" class="has-arrow">
                     <div class="parent-icon"><i class='bx bx-cart'></i>
                     </div>
-                    <div class="menu-title">Pesanan</div>
+                    <div class="menu-title">Booking</div>
                 </a>
                 <ul>
                     @if (Auth::user()->can('booking.list'))
-                        <li> <a href="{{ route('booking.list') }}"><i class='bx bx-radio-circle'></i>Daftar Pesanan</a>
+                        <li> <a href="{{ route('booking.list') }}"><i class='bx bx-radio-circle'></i>Daftar Booking</a>
                         </li>
                     @endif
                     @if (Auth::user()->can('booking.add'))
-                        <li> <a href="{{ route('add.room.list') }}"><i class='bx bx-radio-circle'></i>Tambah Pesanan</a>
+                        <li> <a href="{{ route('add.room.list') }}"><i class='bx bx-radio-circle'></i>Tambah Booking</a>
                         </li>
                     @endif
                 </ul>
@@ -123,20 +123,21 @@
                 <a class="has-arrow" href="javascript:;">
                     <div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
                     </div>
-                    <div class="menu-title">Laporan Pesanan</div>
+                    <div class="menu-title">Laporan Booking</div>
                 </a>
                 <ul>
-                    <li> <a href="{{ route('booking.report') }}"><i class='bx bx-radio-circle'></i>Laporan Pesanan</a>
+                    <li> <a href="{{ route('booking.report') }}"><i class='bx bx-radio-circle'></i>Laporan Booking</a>
                     </li>
                 </ul>
             </li>
         @endif
+        <li class="menu-label">Lain-Lain</li>
         @if (Auth::user()->can('contact.message.menu'))
             <li>
                 <a class="has-arrow" href="javascript:;">
                     <div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
                     </div>
-                    <div class="menu-title">Pesan Kontak</div>
+                    <div class="menu-title">Pesan</div>
                 </a>
                 <ul>
                     <li> <a href="{{ route('contact.message') }}"><i class='bx bx-radio-circle'></i>Daftar Pesan</a>
@@ -144,7 +145,6 @@
                 </ul>
             </li>
         @endif
-        <li class="menu-label">Lain-Lain</li>
         @if (Auth::user()->can('setting.menu'))
             <li>
                 <a class="has-arrow" href="javascript:;">

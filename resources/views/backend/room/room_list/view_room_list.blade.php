@@ -10,13 +10,13 @@
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">All Room List </li>
+                        <li class="breadcrumb-item active" aria-current="page">Daftar Kamar</li>
                     </ol>
                 </nav>
             </div>
             <div class="ms-auto">
                 <div class="btn-group">
-                    <a href="{{ route('add.room.list') }}" class="btn btn-primary px-5">Add Booking </a>
+                    <a href="{{ route('add.room.list') }}" class="btn btn-primary px-5">Tambah Booking</a>
 
                 </div>
             </div>
@@ -30,12 +30,12 @@
                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
-                                <th>Sl</th>
-                                <th>Room Type</th>
-                                <th>Room Number</th>
-                                <th>B Status </th>
-                                <th>In/Out Date</th>
-                                <th>Booking No</th>
+                                <th>No</th>
+                                <th>Tipe Kamar</th>
+                                <th>Nomor Kamar</th>
+                                <th>Status Booking</th>
+                                <th>Tgl Check In/Out</th>
+                                <th>No Booking</th>
                                 <th>Customer</th>
                                 <th>Status</th>
                             </tr>
@@ -48,13 +48,13 @@
                                     <td>{{ $item->room_number }}</td>
                                     <td>
                                         @if ($item->booking_id != '')
-                                            @if ($item->booking_stauts == 1)
-                                                <span class="badge bg-danger">Booked</span>
+                                            @if ($item->booking_status == 1)
+                                                <span class="badge bg-danger">Dipesan</span>
                                             @else
                                                 <span class="badge bg-warning">Pending</span>
                                             @endif
                                         @else
-                                            <span class="badge bg-success">Available</span>
+                                            <span class="badge bg-success">Tersedia</span>
                                         @endif
                                     </td>
 
@@ -84,9 +84,9 @@
 
                                     <td>
                                         @if ($item->status == 'Active')
-                                            <span class="badge bg-success">Published</span>
+                                            <span class="badge bg-success">Aktif</span>
                                         @else
-                                            <span class="badge bg-danger">InActive</span>
+                                            <span class="badge bg-danger">Tidak Aktif</span>
                                         @endif
                                     </td>
 

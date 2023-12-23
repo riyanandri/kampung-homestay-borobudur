@@ -3,8 +3,8 @@
 
     <table class="table">
         <tr>
-            <th>Room Number</th>
-            <th>Action</th>
+            <th>Nomor Kamar</th>
+            <th>Aksi</th>
         </tr>
 
         @foreach ($room_numbers as $room_number)

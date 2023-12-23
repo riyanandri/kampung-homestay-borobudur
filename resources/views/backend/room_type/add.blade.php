@@ -28,7 +28,7 @@
                                 <div class="card-body">
                                     <div class="row mb-3">
                                         <div class="col-sm-3">
-                                            <h6 class="mb-0">Nama Tipe Room</h6>
+                                            <h6 class="mb-0">Nama Tipe Kamar</h6>
                                         </div>
                                         <div class="form-group col-sm-9 text-secondary">
                                             <input type="text" class="form-control" name="name" />

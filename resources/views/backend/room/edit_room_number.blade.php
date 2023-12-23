@@ -44,7 +44,7 @@
                                         </div>
                                         <div class="col-sm-9 text-secondary">
                                             <select name="status" id="input7" class="form-select">
-                                                <option selected="">Pilih</option>
+                                                <option>Pilih</option>
                                                 <option value="Active"
                                                     {{ $room_number->status == 'Active' ? 'selected' : '' }}>
                                                     Aktif</option>

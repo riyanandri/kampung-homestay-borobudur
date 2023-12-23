@@ -9,13 +9,13 @@
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">All Admin</li>
+                        <li class="breadcrumb-item active" aria-current="page">Daftar Admin</li>
                     </ol>
                 </nav>
             </div>
             <div class="ms-auto">
                 <div class="btn-group">
-                    <a href="{{ route('add.admin') }}" class="btn btn-primary px-5">Add Admin </a>
+                    <a href="{{ route('add.admin') }}" class="btn btn-primary px-5">Tambah Admin</a>
                 </div>
             </div>
         </div>
@@ -27,13 +27,13 @@
                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
-                                <th>Sl</th>
-                                <th>Image</th>
-                                <th>Name</th>
+                                <th>No</th>
+                                <th>Gambar</th>
+                                <th>Nama</th>
                                 <th>Email</th>
-                                <th>Phone</th>
-                                <th>Role</th>
-                                <th>Action</th>
+                                <th>No Hp</th>
+                                <th>Peran</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -54,9 +54,9 @@
                                     <td>
                                         <a href="{{ route('edit.admin', $item->id) }}"
                                             class="btn btn-warning px-3 radius-30">
-                                            Edit</a>
+                                            Ubah</a>
                                         <a href="{{ route('delete.admin', $item->id) }}"
-                                            class="btn btn-danger px-3 radius-30" id="delete"> Delete</a>
+                                            class="btn btn-danger px-3 radius-30" id="delete">Hapus</a>
                                     </td>
                                 </tr>
                             @endforeach

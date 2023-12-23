@@ -34,7 +34,7 @@
                                         <label for="input1" class="form-label">Grup</label>
                                         <select name="group_name" class="form-select mb-3"
                                             aria-label="Default select example">
-                                            <option selected="">Pilih</option>
+                                            <option>Pilih</option>
                                             <option value="Owner">Owner</option>
                                             <option value="Book Area">Book Area</option>
                                             <option value="Manage Room">Manage Room</option>
@@ -43,7 +43,7 @@
                                             <option value="RoomList">RoomList</option>
                                             <option value="Setting">Setting</option>
                                             <option value="Booking Report">Booking Report</option>
-                                            <option value="Contact Message ">Contact Message</option>
+                                            <option value="Contact Message">Contact Message</option>
                                             <option value="Role and Permission">Role and Permission</option>
                                             <option value="Manage Admin">Manage Admin</option>
                                         </select>

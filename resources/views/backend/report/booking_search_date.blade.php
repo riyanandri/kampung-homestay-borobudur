@@ -8,10 +8,10 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a></li>
-                        <li class="breadcrumb-item active" aria-current="page">All Booking</li>
-                        <li class="breadcrumb-item active" aria-current="page">Search Date </li>
+                        <li class="breadcrumb-item active" aria-current="page">Daftar Booking</li>
+                        <li class="breadcrumb-item active" aria-current="page">Tgl Pencarian</li>
                         <li class="breadcrumb-item active" aria-current="page"> <span
-                                class="badge bg-success">{{ $startDate }}</span> to <span
+                                class="badge bg-success">{{ $startDate }}</span> sampai <span
                                 class="badge bg-danger">{{ $endDate }}</span>
                         </li>
                     </ol>
@@ -19,7 +19,7 @@
             </div>
             <div class="ms-auto">
                 <div class="btn-group">
-                    <a href="{{ route('booking.report') }}" class="btn btn-primary px-5">Booking Report </a>
+                    <a href="{{ route('booking.report') }}" class="btn btn-primary px-5">Laporan Booking</a>
                 </div>
             </div>
         </div>
@@ -32,13 +32,13 @@
                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
-                                <th>Sl</th>
-                                <th>Code</th>
-                                <th>Name</th>
+                                <th>No</th>
+                                <th>Kode</th>
+                                <th>Nama</th>
                                 <th>Email</th>
-                                <th>Payment Method </th>
-                                <th>Total Price </th>
-                                <th>Action</th>
+                                <th>Metode Pembayaran</th>
+                                <th>Total Harga</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -49,11 +49,11 @@
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->email }}</td>
                                     <td>{{ $item->payment_method }}</td>
-                                    <td>${{ $item->total_price }}</td>
+                                    <td>{{ formatRupiah($item->total_price) }}</td>
                                     <td>
                                         <a href="{{ route('download.invoice', $item->id) }}"
-                                            class="btn btn-warning px-3 radius-10"><i class="lni lni-download"></i> Download
-                                            Invoice</a>
+                                            class="btn btn-warning px-3 radius-10"><i class="lni lni-download"></i>Unduh
+                                            Faktur</a>
 
                                     </td>
                                 </tr>
